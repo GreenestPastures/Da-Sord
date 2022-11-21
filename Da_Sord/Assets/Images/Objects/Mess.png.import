@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Mess.png-b20d2c801ff033eae5c5de95528f7837.stex"
+path="res://.import/Mess.png-9c84c122c50bda7961171ec2189cc894.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Objects/Mess.png"
-dest_files=[ "res://.import/Mess.png-b20d2c801ff033eae5c5de95528f7837.stex" ]
+source_file="res://Assets/Images/Objects/Mess.png"
+dest_files=[ "res://.import/Mess.png-9c84c122c50bda7961171ec2189cc894.stex" ]
 
 [params]
 
