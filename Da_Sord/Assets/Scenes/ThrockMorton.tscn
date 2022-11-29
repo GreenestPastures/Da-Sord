@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Scripts/SimplePlayerMoveScript.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/Player/Player.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Player/PlayerPlaceholder.png" type="Texture" id=2]
 
 [sub_resource type="Animation" id=2]
 resource_name = "KickFlip"
@@ -39,6 +39,7 @@ radius = 19.0
 height = 42.0
 
 [node name="ThrockMorton" type="KinematicBody2D" groups=["Player"]]
+scale = Vector2( 1.35772, 1.35772 )
 script = ExtResource( 1 )
 jumpPow = 750.0
 
@@ -47,7 +48,8 @@ anims/KickFlip = SubResource( 2 )
 anims/RESET = SubResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -5, -5.5 )
+position = Vector2( 4.76837e-07, -3 )
+scale = Vector2( 0.0266746, 0.0266746 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]

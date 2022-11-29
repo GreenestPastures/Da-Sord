@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Images/Background ELements/skyTest.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Scenes/DialogueItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scenes/TempQuestChar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Images/Background ELements/pixelCassle.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Characters/questguy.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/MountainsSkybox.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Scenes/PopupTest.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128.5, 32.5 )
@@ -22,13 +24,14 @@ extents = Vector2( 20, 20 )
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.12, 1 )
 motion_offset = Vector2( 0, -1584 )
-motion_mirroring = Vector2( 3050.6, 1749.74 )
+motion_mirroring = Vector2( 3041.28, 760.32 )
 
 [node name="SkyBlue" type="Sprite" parent="ParallaxBackground/Sky"]
-position = Vector2( 0, -1584 )
-scale = Vector2( 2.17885, 2.17885 )
-texture = ExtResource( 3 )
+position = Vector2( 0, -752 )
+scale = Vector2( 11.8795, 11.8795 )
+texture = ExtResource( 9 )
 centered = false
+offset = Vector2( 0, 10 )
 
 [node name="Far Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.545, 1 )
@@ -80,7 +83,7 @@ texture = ExtResource( 5 )
 position = Vector2( 158, -317 )
 speed = 800.0
 
-[node name="Platform" type="StaticBody2D" parent="."]
+[node name="Platform" type="StaticBody2D" parent="." groups=["Platform"]]
 position = Vector2( 1829, 43 )
 rotation = 1.5708
 
@@ -93,7 +96,7 @@ rotation = -1.5708
 shape = SubResource( 2 )
 one_way_collision = true
 
-[node name="Platform2" type="StaticBody2D" parent="."]
+[node name="Platform2" type="StaticBody2D" parent="." groups=["Platform"]]
 position = Vector2( 2581, 94 )
 rotation = 1.5708
 
@@ -101,6 +104,45 @@ rotation = 1.5708
 texture = ExtResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform3" type="StaticBody2D" parent="." groups=["Platform"]]
+position = Vector2( 1899, -196 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platform3"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform5" type="StaticBody2D" parent="." groups=["Platform"]]
+position = Vector2( 2234, -304 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platform5"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform4" type="StaticBody2D" parent="." groups=["Platform"]]
+position = Vector2( 1509, -55 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platform4"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
 position = Vector2( -4.5, -1.5 )
 rotation = -1.5708
 shape = SubResource( 2 )
@@ -127,4 +169,9 @@ scale = Vector2( 8.36, 1 )
 shape = SubResource( 1 )
 
 [node name="QuestGiver" parent="." instance=ExtResource( 6 )]
-position = Vector2( 3640, 36 )
+position = Vector2( 3640, 71 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueItem" parent="CanvasLayer" instance=ExtResource( 3 )]
+script = ExtResource( 10 )
