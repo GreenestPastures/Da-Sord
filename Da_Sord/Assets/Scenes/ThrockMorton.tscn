@@ -40,6 +40,7 @@ height = 42.0
 
 [node name="ThrockMorton" type="KinematicBody2D" groups=["Player"]]
 script = ExtResource( 1 )
+jumpPow = 750.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/KickFlip = SubResource( 2 )
