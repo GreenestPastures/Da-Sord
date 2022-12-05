@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (float) var speed = 1
+export (float) var speed = 1.0
 var velocity = Vector2.ZERO
 export (float) var jumpPow = 600
 const GRAVITY = 30

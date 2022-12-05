@@ -2,17 +2,25 @@ extends Node
 export (Array, String) var sentences = []
 export (int) onready var lines = sentences.size()
 export (int) onready var lastLine = lines-1
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+export (bool) var questQuestions 
+var currentCol
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	print(sentences[lastLine])
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func _on_QuestGiver_body_entered(touching):
+	if touching.is_in_group("Player"):
+		questQuestions = true
+		currentCol = touching
+
+
+func _on_QuestGiver_body_exited(area):
+	if area.is_in_group("Player"):
+		questQuestions = false
+
+func _input(event):
+	if Input.is_action_just_pressed("interact") && questQuestions:
+		currentCol.get_node("Camera2D/CanvasLayer/DialogueItem").questDialog(sentences, lines)

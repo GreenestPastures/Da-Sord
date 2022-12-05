@@ -1,6 +1,6 @@
 extends Area2D
 
-export (bool) var questQuestions 
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -17,11 +17,4 @@ func _ready():
 #	pass
 
 
-func _on_QuestGiver_area_entered(area):
-	if area.is_in_group("Player"):
-		questQuestions = true
 
-
-func _on_QuestGiver_area_exited(area):
-	if area.is_in_group("Player"):
-		questQuestions = false
