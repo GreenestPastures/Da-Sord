@@ -1,37 +1,150 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Scenes/DialogueItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scenes/TempQuestChar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Images/Background ELements/pixelCassle.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Characters/questguy.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Images/Background ELements/MountainSky/MountainsSkybox.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Scenes/PopupTest.gd" type="Script" id=10]
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 128.5, 32.5 )
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-6.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-8.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-7.png" type="Texture" id=14]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-5.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-3.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-4.png" type="Texture" id=17]
+[ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 128.5, 32.5 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2( 0.12, 1 )
-motion_offset = Vector2( 0, -1584 )
-motion_mirroring = Vector2( 3041.28, 760.32 )
+motion_scale = Vector2( 0.07, 0.2 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
 
 [node name="SkyBlue" type="Sprite" parent="ParallaxBackground/Sky"]
-position = Vector2( 0, -752 )
-scale = Vector2( 11.8795, 11.8795 )
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 11 )
+centered = false
+offset = Vector2( 0, 10 )
+
+[node name="CloudBehind" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.08, 0.25 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/CloudBehind"]
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 12 )
+centered = false
+offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CastleFlat" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.09, 0.28 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/CastleFlat"]
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 16 )
+centered = false
+offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="CloudFront1" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.1, 0.287 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite3" type="Sprite" parent="ParallaxBackground/CloudFront1"]
+self_modulate = Color( 1, 1, 1, 0.415686 )
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 17 )
+centered = false
+offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Hills" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.12, 0.296 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite4" type="Sprite" parent="ParallaxBackground/Hills"]
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 15 )
+centered = false
+offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="GreeneryBehind" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.125, 0.3 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite5" type="Sprite" parent="ParallaxBackground/GreeneryBehind"]
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 9 )
 centered = false
 offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ForestMist" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.15, 0.31 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite6" type="Sprite" parent="ParallaxBackground/ForestMist"]
+self_modulate = Color( 1, 1, 1, 0.415686 )
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 14 )
+centered = false
+offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Greenery" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.13, 0.33 )
+motion_offset = Vector2( 0, -2069 )
+motion_mirroring = Vector2( 1440, 1053 )
+
+[node name="Sprite7" type="Sprite" parent="ParallaxBackground/Greenery"]
+position = Vector2( 0, -755 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 13 )
+centered = false
+offset = Vector2( 0, 10 )
+__meta__ = {
+"_editor_description_": ""
+}
 
 [node name="Far Background" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2( 0.545, 1 )
@@ -83,71 +196,6 @@ texture = ExtResource( 5 )
 position = Vector2( 158, -317 )
 speed = 800.0
 
-[node name="Platform" type="StaticBody2D" parent="." groups=["Platform"]]
-position = Vector2( 1829, 43 )
-rotation = 1.5708
-
-[node name="Questguy" type="Sprite" parent="Platform"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="Platform2" type="StaticBody2D" parent="." groups=["Platform"]]
-position = Vector2( 2581, 94 )
-rotation = 1.5708
-
-[node name="Questguy" type="Sprite" parent="Platform2"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
-position = Vector2( -4.5, -1.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="Platform3" type="StaticBody2D" parent="." groups=["Platform"]]
-position = Vector2( 1899, -196 )
-rotation = 1.5708
-
-[node name="Questguy" type="Sprite" parent="Platform3"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="Platform5" type="StaticBody2D" parent="." groups=["Platform"]]
-position = Vector2( 2234, -304 )
-rotation = 1.5708
-
-[node name="Questguy" type="Sprite" parent="Platform5"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform5"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="Platform4" type="StaticBody2D" parent="." groups=["Platform"]]
-position = Vector2( 1509, -55 )
-rotation = 1.5708
-
-[node name="Questguy" type="Sprite" parent="Platform4"]
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
-position = Vector2( -4.5, -1.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
-
 [node name="ColorRect2" type="ColorRect" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
@@ -170,8 +218,1242 @@ shape = SubResource( 1 )
 
 [node name="QuestGiver" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3640, 71 )
+script = ExtResource( 18 )
+sentences = [ "Line one", "Line  two", " Line  three ", "Line 4", "Line 5", "Line 6", "Line 7", "Line 8", "Line 9", "This is line 10" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Platfroms" type="Node2D" parent="."]
 
-[node name="DialogueItem" parent="CanvasLayer" instance=ExtResource( 3 )]
-script = ExtResource( 10 )
+[node name="Platform" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1829, 43 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform2" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2581, 94 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform2"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform2"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform3" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1899, -196 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform3"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform3"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform5" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2234, -304 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform5"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform5"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform4" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1509, -55 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform4"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform4"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform6" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2570, -408 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform6"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform6"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform7" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2886, -522 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform7"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform7"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform8" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2573, -630 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform8"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform8"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform9" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2438, -761 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform9"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform9"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform10" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2166, -899 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform10"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform10"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform11" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1934, -1037 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform11"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform11"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform12" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2196, -1118 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform12"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform12"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform13" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2495, -1185 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform13"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform13"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform14" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2808, -1239 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform14"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform14"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform15" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2488, -1313 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform15"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform15"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform16" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2158, -1411 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform16"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform16"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform17" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1842, -1465 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform17"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform17"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform18" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1173, -1421 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform18"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform18"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform19" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 867, -1495 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform19"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform19"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform20" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3455, -1037 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform20"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform20"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform21" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4207, -986 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform21"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform21"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform22" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3525, -1276 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform22"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform22"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform23" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3860, -1384 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform23"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform23"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform24" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3135, -1135 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform24"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform24"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform25" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4196, -1488 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform25"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform25"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform26" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4512, -1602 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform26"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform26"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform27" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4199, -1710 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform27"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform27"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform28" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4064, -1841 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform28"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform28"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform29" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3792, -1979 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform29"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform29"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform30" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3560, -2117 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform30"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform30"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform31" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3822, -2198 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform31"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform31"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform32" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4121, -2265 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform32"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform32"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform33" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4434, -2319 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform33"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform33"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform34" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4114, -2393 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform34"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform34"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform35" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3784, -2491 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform35"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform35"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform36" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3468, -2545 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform36"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform36"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform37" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2799, -2501 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform37"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform37"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform38" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2493, -2575 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform38"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform38"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform39" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2692, -2724 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform39"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform39"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform40" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3444, -2673 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform40"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform40"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform41" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2762, -2963 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform41"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform41"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform42" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3097, -3071 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform42"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform42"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform43" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2372, -2822 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform43"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform43"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform44" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3433, -3175 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform44"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform44"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform45" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3749, -3289 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform45"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform45"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform46" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3436, -3397 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform46"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform46"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform47" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3301, -3528 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform47"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform47"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform48" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3029, -3666 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform48"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform48"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform49" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2797, -3804 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform49"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform49"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform50" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3059, -3885 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform50"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform50"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform51" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3358, -3952 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform51"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform51"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform52" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3671, -4006 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform52"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform52"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform53" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3351, -4080 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform53"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform53"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform54" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3021, -4178 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform54"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform54"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform55" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2705, -4232 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform55"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform55"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform56" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 2036, -4188 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform56"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform56"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform57" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 1730, -4262 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform57"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform57"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform58" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4965, -2572 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform58"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform58"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform59" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5717, -2521 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform59"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform59"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform60" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5035, -2811 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform60"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform60"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform61" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5370, -2919 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform61"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform61"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform62" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4645, -2670 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform62"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform62"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform63" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5706, -3023 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform63"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform63"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform64" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 6022, -3137 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform64"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform64"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform65" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5709, -3245 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform65"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform65"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform66" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5574, -3376 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform66"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform66"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform67" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5302, -3514 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform67"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform67"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform68" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5070, -3652 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform68"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform68"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform69" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5332, -3733 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform69"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform69"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform70" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5631, -3800 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform70"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform70"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform71" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5944, -3854 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform71"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform71"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform72" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5624, -3928 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform72"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform72"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform73" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5294, -4026 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform73"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform73"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform74" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4978, -4080 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform74"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform74"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform75" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4309, -4036 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform75"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform75"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform76" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4003, -4110 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform76"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform76"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform77" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4660, -4236 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform77"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform77"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform78" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5412, -4185 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform78"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform78"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform79" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4730, -4475 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform79"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform79"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform80" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5065, -4583 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform80"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform80"]
+position = Vector2( -4.5, 2.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform81" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4340, -4334 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform81"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform81"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform82" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5401, -4687 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform82"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform82"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform83" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5717, -4801 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform83"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform83"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform84" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5404, -4909 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform84"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform84"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform85" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5269, -5040 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform85"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform85"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform86" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4997, -5178 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform86"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform86"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform87" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4765, -5316 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform87"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform87"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform88" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5027, -5397 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform88"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform88"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform89" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5326, -5464 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform89"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform89"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform90" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5639, -5518 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform90"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform90"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform91" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 5319, -5592 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform91"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform91"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform92" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4989, -5690 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform92"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform92"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform93" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4673, -5744 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform93"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform93"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform94" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 4004, -5700 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform94"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform94"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Platform95" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
+position = Vector2( 3698, -5774 )
+rotation = 1.5708
+
+[node name="Questguy" type="Sprite" parent="Platfroms/Platform95"]
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform95"]
+position = Vector2( -4.5, -1.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
