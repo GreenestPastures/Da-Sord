@@ -7,9 +7,9 @@ const GRAVITY = 30
 var bump = [0, 0]
 
 
-func _input(event):
-	if event is InputEventKey && event.pressed:
-		print("arg")
+#func _input(event):
+#	if event is InputEventKey && event.pressed:
+
 
 func _physics_process(delta):
 	if Input.is_action_pressed("left"):

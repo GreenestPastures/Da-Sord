@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/StoneWall1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/KingAlive.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/CastleDoorway1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Scenes/Platform.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Scenes/Props/Chalice.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1812, 14 )
@@ -42,8 +43,7 @@ position = Vector2( 2635, 843 )
 speed = 800.0
 
 [node name="Platform" parent="." instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 1403, 854 )
+position = Vector2( 1403, 863 )
 scale = Vector2( 1.35772, 8.67772 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -52,3 +52,23 @@ position = Vector2( 464, 831 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1415, 102 )
 shape = SubResource( 1 )
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Chalice2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 884, 786 )
+
+[node name="Chalice3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1096, 786 )
+
+[node name="Chalice4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1345, 786 )
+
+[node name="Chalice5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1884, 786 )
+
+[node name="Chalice6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1691, 786 )
+
+[node name="Chalice7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 2344, 444 )
