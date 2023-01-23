@@ -39,3 +39,64 @@ size_flags_vertical = 3
 custom_fonts/font = SubResource( 1 )
 text = "Oh my good jimminy"
 autowrap = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.996
+anchor_top = 0.447
+anchor_right = 0.996
+anchor_bottom = 0.447
+margin_left = -798.32
+margin_top = -358.76
+margin_right = 0.679932
+margin_bottom = 359.24
+alignment = 1
+
+[node name="Op1" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 321.0
+margin_right = 799.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 0, 75 )
+hint_tooltip = "By choosing this, the first choice, you'll have chosen the choice that comes first"
+custom_fonts/font = SubResource( 1 )
+text = "TO BATTLE!"
+
+[node name="Op2" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 321.0
+margin_right = 799.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 0, 75 )
+hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
+custom_fonts/font = SubResource( 1 )
+text = "NAY, CEASE THE VIOLENCE!"
+
+[node name="Op3" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 321.0
+margin_right = 799.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 0, 75 )
+hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
+custom_fonts/font = SubResource( 1 )
+text = "NAY, CEASE THE VIOLENCE!"
+
+[node name="Op4" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 321.0
+margin_right = 799.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 0, 75 )
+hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
+custom_fonts/font = SubResource( 1 )
+text = "NAY, CEASE THE VIOLENCE!"
+
+[node name="Op5" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 321.0
+margin_right = 799.0
+margin_bottom = 396.0
+rect_min_size = Vector2( 0, 75 )
+hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
+custom_fonts/font = SubResource( 1 )
+text = "NAY, CEASE THE VIOLENCE!"

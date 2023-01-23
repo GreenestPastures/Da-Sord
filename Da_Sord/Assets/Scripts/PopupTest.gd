@@ -1,6 +1,12 @@
 extends ColorRect
 var open = false
-
+onready var dialText = $PanelContainer/TextureRect/Label
+var totalLines
+var curLine
+var choices
+var choicesCount
+var manuscript
+export (Array) var optionButtons = []
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,19 +14,38 @@ var open = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	optionButtons.append($VBoxContainer/Op1)
+	optionButtons.append($VBoxContainer/Op2)
+	optionButtons.append($VBoxContainer/Op3)
+	optionButtons.append($VBoxContainer/Op4)
+	optionButtons.append($VBoxContainer/Op5)
 	pass # Replace with function body.
 
 
-#func _input(event):
-#	if Input.is_action_just_pressed("interact") && !open:
-#		DialoguePopup()
-#	if event is InputEventKey && event.pressed && open:
-#		visible = false
-#		open = false
+func _input(event):
+	if event is InputEventKey && event.pressed && open:
+		curLine+= 1
+		if curLine < totalLines:
+			dialText.text = str(manuscript[curLine])
+		elif choicesCount>0:
+			for i in choicesCount:
+				optionButtons[i].visable = true
+			
+			print("Show Choices")
+		else:
+			visible = false
+			open = false
+		yield(get_tree().create_timer(.3), "timeout")
 
-func questDialog(questLines, totLines):
-	print(questLines[1],"   ",totLines)
-	$PanelContainer/TextureRect/Label.text = str(questLines[1],"   ",totLines)
+func questDialog(questLines, totLines, choicesIn):
+	dialText.text = str(questLines[0])
+	curLine = 0
+	totalLines = totLines
+	manuscript = questLines
+	choices = choicesIn
+	choicesCount = choicesIn.size()
+	DialoguePopup()
+
 
 
 func DialoguePopup():

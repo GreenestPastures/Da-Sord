@@ -6,6 +6,11 @@ export (float) var jumpPow = 600
 const GRAVITY = 30
 var bump = [0, 0]
 
+
+func _input(event):
+	if event is InputEventKey && event.pressed:
+		print("arg")
+
 func _physics_process(delta):
 	if Input.is_action_pressed("left"):
 		velocity.x = -speed
@@ -27,11 +32,12 @@ func _physics_process(delta):
 func Drop():
 	for i in get_slide_count():
 		bump = get_slide_collision(i).collider
-	for i in bump.get_groups().size():
-		if bump.get_groups()[i] == "Platform":
-			bump.get_node("CollisionShape2D").disabled = true
-			yield(get_tree().create_timer(.3), "timeout")
-			bump.get_node("CollisionShape2D").disabled = false
+	if bump.get_groups().size():
+		for i in bump.get_groups().size():
+			if bump.get_groups()[i] == "Platform":
+				bump.get_node("CollisionShape2D").disabled = true
+				yield(get_tree().create_timer(.3), "timeout")
+				bump.get_node("CollisionShape2D").disabled = false
 			
 
 

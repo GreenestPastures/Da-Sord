@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/Images/Background ELements/CastleBits/StoneWall1.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Background ELements/CastleBits/KingAlive.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Background ELements/CastleBits/TheLongTable.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2280, 1520 )
+
+[node name="StoneWall1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 1.9, 1.9 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="TheLongTable" type="Sprite" parent="."]
+position = Vector2( 3936, 932.75 )
+scale = Vector2( 2.06229, 0.554705 )
+texture = ExtResource( 3 )
+
+[node name="KingAlive" type="Sprite" parent="."]
+position = Vector2( 474, 577 )
+texture = ExtResource( 2 )

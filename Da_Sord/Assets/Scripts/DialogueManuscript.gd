@@ -1,5 +1,6 @@
 extends Node
 export (Array, String) var sentences = []
+export (Array, String) var choice = []
 export (int) onready var lines = sentences.size()
 export (int) onready var lastLine = lines-1
 export (bool) var questQuestions 
@@ -23,4 +24,4 @@ func _on_QuestGiver_body_exited(area):
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") && questQuestions:
-		currentCol.get_node("Camera2D/CanvasLayer/DialogueItem").questDialog(sentences, lines)
+		currentCol.get_node("Camera2D/CanvasLayer/DialogueItem").questDialog(sentences, lines, choice)
