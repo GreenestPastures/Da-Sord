@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Scenes/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scenes/TempQuestChar.tscn" type="PackedScene" id=6]
@@ -223,20 +224,8 @@ sentences = [ "Line one", "Line  two", " Line  three ", "Line 4", "Line 5", "Lin
 
 [node name="Platfroms" type="Node2D" parent="."]
 
-[node name="Platform" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 1829, 43 )
-rotation = 1.5708
-
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
+[node name="Platform" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 1837, 54 )
 
 [node name="Platform2" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
 position = Vector2( 2111, -56 )

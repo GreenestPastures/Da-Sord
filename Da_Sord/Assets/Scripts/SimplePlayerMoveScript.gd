@@ -32,7 +32,7 @@ func _physics_process(delta):
 func Drop():
 	for i in get_slide_count():
 		bump = get_slide_collision(i).collider
-	if bump.get_groups().size():
+	if bump.get_groups() && bump.get_groups().size():
 		for i in bump.get_groups().size():
 			if bump.get_groups()[i] == "Platform":
 				bump.get_node("CollisionShape2D").disabled = true

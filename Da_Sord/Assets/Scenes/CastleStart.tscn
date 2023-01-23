@@ -1,26 +1,54 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/StoneWall1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/KingAlive.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/TheLongTable.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Background ELements/CastleBits/CastleDoorway1.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Scenes/Platform.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1812, 14 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 2280, 1520 )
+motion_mirroring = Vector2( 1965.6, 806.4 )
 
 [node name="StoneWall1" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-scale = Vector2( 1.9, 1.9 )
+scale = Vector2( 1.6378, 1.00811 )
 texture = ExtResource( 1 )
 centered = false
 
 [node name="TheLongTable" type="Sprite" parent="."]
-position = Vector2( 3936, 932.75 )
-scale = Vector2( 2.06229, 0.554705 )
+position = Vector2( 1379, 852 )
+scale = Vector2( 0.764513, 0.205635 )
 texture = ExtResource( 3 )
 
 [node name="KingAlive" type="Sprite" parent="."]
-position = Vector2( 474, 577 )
+position = Vector2( 159, 771 )
+scale = Vector2( 0.300988, 0.300988 )
 texture = ExtResource( 2 )
+
+[node name="CastleDoorway1" type="Sprite" parent="."]
+position = Vector2( 2634, 763 )
+scale = Vector2( 0.3165, 0.356499 )
+texture = ExtResource( 4 )
+
+[node name="ThrockMorton" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2635, 843 )
+speed = 800.0
+
+[node name="Platform" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 1403, 854 )
+scale = Vector2( 1.35772, 8.67772 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 464, 831 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1415, 102 )
+shape = SubResource( 1 )
