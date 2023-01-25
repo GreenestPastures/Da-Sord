@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/StoneWall1.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/KingAlive.png" type="Texture" id=2]
@@ -8,12 +8,16 @@
 [ext_resource path="res://Assets/Scenes/Platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scenes/Props/Chalice.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Scripts/Doorway.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 254.346, 382.89 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1812, 14 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 68.5, 144.5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -77,11 +81,6 @@ visible = false
 position = Vector2( -1213.84, -19.4517 )
 scale = Vector2( 4.86299, 1.30802 )
 
-[node name="KingAlive" type="Sprite" parent="."]
-position = Vector2( 159, 771 )
-scale = Vector2( 0.300988, 0.300988 )
-texture = ExtResource( 2 )
-
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 2634, 763 )
 scale = Vector2( 0.3165, 0.356499 )
@@ -128,5 +127,20 @@ position = Vector2( 1691, 786 )
 [node name="Chalice7" parent="." instance=ExtResource( 7 )]
 position = Vector2( 2344, 444 )
 
+[node name="The King" type="Area2D" parent="."]
+position = Vector2( 177, 756 )
+script = ExtResource( 9 )
+sentences = [ "Hello, yep, I am the king", "Ooh would you look at that, it appears I've been poisoned" ]
+
+[node name="KingAlive" type="Sprite" parent="The King"]
+scale = Vector2( 0.300988, 0.300988 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="The King"]
+position = Vector2( 1.5, -2.5 )
+shape = SubResource( 3 )
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Doorway_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Doorway_body_exited"]
+[connection signal="body_entered" from="The King" to="The King" method="_on_QuestGiver_body_entered"]
+[connection signal="body_exited" from="The King" to="The King" method="_on_QuestGiver_body_exited"]

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Scripts/Doorway.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.7117, 61.9109 )
+
+[node name="Doorway" type="Area2D"]
+position = Vector2( 0, -511 )
+scale = Vector2( 1.51992, 1.51992 )
+priority = 2.0
+script = ExtResource( 1 )
+spotPlaceDestination = "res://Assets/Scenes/CastleStart.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 89.0839, 384.823 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="." to="." method="_on_Doorway_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_Doorway_body_exited"]
