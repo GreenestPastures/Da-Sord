@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Assets/Images/Background ELements/pixelCassle.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Images/Characters/questguy.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-6.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Scenes/Doorway.gd" type="Script" id=10]
+[ext_resource path="res://Assets/Scripts/Doorway.gd" type="Script" id=10]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-1.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-8.png" type="Texture" id=13]
@@ -18,13 +18,12 @@
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-3.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-4.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Images/Objects/Castle Crap/Goblet.png" type="Texture" id=19]
-
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 60.5, 102.5 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 26.7117, 61.9109 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 128.5, 32.5 )
@@ -190,17 +189,7 @@ scale = Vector2( 1.51992, 1.51992 )
 texture = ExtResource( 4 )
 centered = false
 
-[node name="Area2D" type="Area2D" parent="ParallaxBackground/Background" groups=["Doorway"]]
-script = ExtResource( 10 )
-
-[node name="Goblet" type="Sprite" parent="ParallaxBackground/Background/Area2D"]
-position = Vector2( 134, 79 )
-scale = Vector2( 0.0884901, 0.116829 )
-texture = ExtResource( 19 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxBackground/Background/Area2D"]
-position = Vector2( 134.5, 72.5 )
-shape = SubResource( 3 )
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Close Up" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_mirroring = Vector2( 15569.4, 0 )
@@ -211,7 +200,7 @@ scale = Vector2( 11.1214, 2.43584 )
 texture = ExtResource( 5 )
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 1 )]
-position = Vector2( 158, -317 )
+position = Vector2( 110, 104 )
 speed = 800.0
 
 [node name="ColorRect2" type="ColorRect" parent="."]
@@ -238,6 +227,17 @@ shape = SubResource( 1 )
 position = Vector2( 792, 63 )
 script = ExtResource( 18 )
 sentences = [ "Line one", "Line  two", " Line  three ", "Line 4", "Line 5", "Line 6", "Line 7", "Line 8", "Line 9", "This is line 10" ]
+
+[node name="Doorway" type="Area2D" parent="."]
+position = Vector2( 0, -511 )
+scale = Vector2( 1.51992, 1.51992 )
+priority = 2.0
+script = ExtResource( 10 )
+spotPlaceDestination = "res://Assets/Scenes/CastleStart.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Doorway"]
+position = Vector2( 89.0839, 384.823 )
+shape = SubResource( 3 )
 
 [node name="Platfroms" type="Node2D" parent="."]
 
@@ -334,7 +334,7 @@ rotation = -1.5708
 shape = SubResource( 2 )
 one_way_collision = true
 
-[connection signal="body_entered" from="ParallaxBackground/Background/Area2D" to="ParallaxBackground/Background/Area2D" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="ParallaxBackground/Background/Area2D" to="ParallaxBackground/Background/Area2D" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_entered"]
 [connection signal="body_exited" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_exited"]
+[connection signal="body_entered" from="Doorway" to="Doorway" method="_on_Doorway_body_entered"]
+[connection signal="body_exited" from="Doorway" to="Doorway" method="_on_Doorway_body_exited"]
