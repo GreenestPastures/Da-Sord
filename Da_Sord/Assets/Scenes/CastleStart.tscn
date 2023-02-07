@@ -5,10 +5,12 @@
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/TheLongTable.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Background ELements/CastleBits/CastleDoorway1.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Scenes/Platform.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Scenes/Props/Chalice.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/Scripts/Doorway.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=9]
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1420.51, 48.63 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 254.346, 382.89 )
@@ -36,50 +38,15 @@ position = Vector2( 1379, 852 )
 scale = Vector2( 0.764513, 0.205635 )
 texture = ExtResource( 3 )
 
-[node name="Platform" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 1211.23, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
+[node name="StaticBody2D" type="StaticBody2D" parent="TheLongTable" groups=["Platform"]]
+collision_layer = 6
+collision_mask = 2
 
-[node name="Platform2" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 770.425, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform3" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( 346.626, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform4" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( -94.1776, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform5" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( -508.821, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform6" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( -949.624, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform7" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( -508.821, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform8" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( -949.624, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
-
-[node name="Platform9" parent="TheLongTable" instance=ExtResource( 6 )]
-visible = false
-position = Vector2( -1213.84, -19.4517 )
-scale = Vector2( 4.86299, 1.30802 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheLongTable/StaticBody2D"]
+position = Vector2( -2.61658, -160.478 )
+scale = Vector2( 1, 1 )
+shape = SubResource( 4 )
+one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 2634, 763 )
@@ -93,7 +60,6 @@ scale = Vector2( 0.999999, 0.999999 )
 shape = SubResource( 2 )
 
 [node name="CastleDoorway1" type="Sprite" parent="Area2D"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 5 )]

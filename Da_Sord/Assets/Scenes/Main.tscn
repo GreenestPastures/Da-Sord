@@ -1,13 +1,12 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
-[ext_resource path="res://Assets/Scenes/Platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Scenes/Props/Platform.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scenes/TempQuestChar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Images/Background ELements/pixelCassle.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/Characters/questguy.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-6.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Scenes/Props/Doorway.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-1.png" type="Texture" id=11]
@@ -21,9 +20,6 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
-
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 128.5, 32.5 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -236,95 +232,44 @@ scale = Vector2( 3.07992, 1.51992 )
 [node name="Platform" parent="Platfroms" instance=ExtResource( 3 )]
 position = Vector2( 1837, 54 )
 
-[node name="Platform2" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 2111, -56 )
-rotation = 1.5708
+[node name="Platform2" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2243, -57 )
 
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform2"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
+[node name="Platform3" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 1689, -154 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform2"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
+[node name="Platform4" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2826, -208 )
 
-[node name="Platform3" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 2534, -113 )
-rotation = 1.5708
+[node name="Platform5" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 3314, -91 )
 
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform3"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
+[node name="Platform6" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2433, -391 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform3"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
+[node name="Platform7" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2120, -292 )
 
-[node name="Platform4" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 2043, -188 )
-rotation = 1.5708
+[node name="Platform8" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 1539, -563 )
 
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform4"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
+[node name="Platform9" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 1389, -421 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform4"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
+[node name="Platform10" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 1145, -145 )
 
-[node name="Platform5" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 1767, -270 )
-rotation = 1.5708
+[node name="Platform11" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 1097, -256 )
 
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform5"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
+[node name="Platform12" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2117, -671 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform5"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
+[node name="Platform13" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2480, -602 )
 
-[node name="Platform6" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 1515, -387 )
-rotation = 1.5708
-
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform6"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform6"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
-
-[node name="Platform7" type="StaticBody2D" parent="Platfroms" groups=["Platform"]]
-position = Vector2( 2261, -366 )
-rotation = 1.5708
-
-[node name="PlatformPiece" type="Sprite" parent="Platfroms/Platform7"]
-position = Vector2( -4.08866, 2.37838 )
-scale = Vector2( 1.13629, 0.74964 )
-texture = ExtResource( 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platfroms/Platform7"]
-position = Vector2( -4.5, 2.5 )
-rotation = -1.5708
-shape = SubResource( 2 )
-one_way_collision = true
+[node name="Platform14" parent="Platfroms" instance=ExtResource( 3 )]
+position = Vector2( 2829, -831 )
 
 [connection signal="body_entered" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_entered"]
 [connection signal="body_exited" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_exited"]

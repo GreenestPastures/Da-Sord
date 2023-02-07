@@ -8,6 +8,8 @@ extents = Vector2( 171, 30 )
 
 [node name="Platform" type="StaticBody2D" groups=["Platform"]]
 rotation = 1.5708
+collision_layer = 6
+collision_mask = 2
 
 [node name="PlatformPiece" type="Sprite" parent="."]
 position = Vector2( -4.08866, 2.37838 )
