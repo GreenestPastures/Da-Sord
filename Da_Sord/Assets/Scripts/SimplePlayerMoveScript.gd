@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (float) var speed = 1.0
+var stance = 1
 var velocity = Vector2.ZERO
 export (float) var jumpPow = 600
 const GRAVITY = 30
@@ -31,14 +32,20 @@ func _physics_process(delta):
 	
 	
 	if Input.is_action_just_pressed("Stance 1"):
-		print("Stanced Up")
+		stance = 1
 	if Input.is_action_just_pressed("Stance 2"):
 		print("Stanced Down")
-		
+		stance = 2
 	if Input.is_action_just_pressed("heavy attack"):
-		print("WALLOP")
+		if stance == 1:
+			$AnimationPlayer.play("Swing1")
+		elif stance == 2:
+			$AnimationPlayer.play("Swing 2")
 	if Input.is_action_just_pressed("light attack"):
-		print("Whack")
+		if stance == 1:
+			print("smack")
+		elif stance == 2:
+			print("kerthwack!!")
 
 func Drop():
 	if get_slide_count():
