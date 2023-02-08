@@ -1,6 +1,6 @@
 extends Node
-export (Array, String) var sentences = []
-export (Array, String) var choice = []
+export (Array, Array) var sentences = []
+export (Array, Array) var choice = []
 export (int) onready var lines = sentences.size()
 export (int) onready var lastLine = lines-1
 export (bool) var questQuestions 
@@ -8,7 +8,7 @@ var currentCol
 
 
 func _ready():
-	print(sentences[lastLine])
+	print(sentences[lastLine][0])
 
 
 
@@ -21,6 +21,7 @@ func _on_QuestGiver_body_entered(touching):
 func _on_QuestGiver_body_exited(area):
 	if area.is_in_group("Player"):
 		questQuestions = false
+
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") && questQuestions:

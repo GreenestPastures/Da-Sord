@@ -44,7 +44,6 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheLongTable/StaticBody2D"]
 position = Vector2( -2.61658, -160.478 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 4 )
 one_way_collision = true
 
@@ -96,7 +95,7 @@ position = Vector2( 2344, 444 )
 [node name="The King" type="Area2D" parent="."]
 position = Vector2( 177, 756 )
 script = ExtResource( 9 )
-sentences = [ "Hello, yep, I am the king", "Ooh would you look at that, it appears I've been poisoned" ]
+sentences = [ [ "Hello, yep, I am the king", 0 ], [ "Ooh would you look at that, it appears I've been poisoned", 0 ], [ null, 1 ], [ null, 5 ], [ null, 2 ], [ null, 3 ] ]
 
 [node name="KingAlive" type="Sprite" parent="The King"]
 scale = Vector2( 0.300988, 0.300988 )

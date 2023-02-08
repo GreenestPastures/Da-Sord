@@ -26,10 +26,23 @@ func _input(event):
 	if event is InputEventKey && event.pressed && open:
 		curLine+= 1
 		if curLine < totalLines:
-			dialText.text = str(manuscript[curLine])
+			dialText.text = str(manuscript[curLine][0])
+			match manuscript[curLine][1]:
+				1:
+					 print("First Option")
+				2:
+					 print("Second")
+				3:
+					 print("Third Option")
+				4:
+					 print("Fourth Option")
+				5:
+					 print("Fifth Option")
+				_:
+					print("Nothing Happnes")
 		elif choicesCount>0:
 			for i in choicesCount:
-				optionButtons[i].visable = true
+				optionButtons[i].visible = true
 			
 			print("Show Choices")
 		else:
@@ -38,15 +51,13 @@ func _input(event):
 		yield(get_tree().create_timer(.3), "timeout")
 
 func questDialog(questLines, totLines, choicesIn):
-	dialText.text = str(questLines[0])
+	dialText.text = str(questLines[0][0])
 	curLine = 0
 	totalLines = totLines
 	manuscript = questLines
 	choices = choicesIn
 	choicesCount = choicesIn.size()
 	DialoguePopup()
-
-
 
 func DialoguePopup():
 	visible = true
