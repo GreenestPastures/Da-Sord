@@ -3,7 +3,7 @@ var open = false
 onready var dialText = $PanelContainer/TextureRect/Label
 var totalLines
 var curLine
-var choices
+export (Array) var choices
 var choicesCount
 var manuscript
 export (Array) var optionButtons = []
@@ -33,7 +33,12 @@ func _input(event):
 				2:
 					 print("Second")
 				3:
-					 print("Third Option")
+					#choices.clear()
+					#var temp = manuscript[curLine].size()
+					# for i=curline < temp-1, i++:
+					#	coices.appendmanuscript[curline][i]
+					print("Choices!")
+					
 				4:
 					 print("Fourth Option")
 				5:
