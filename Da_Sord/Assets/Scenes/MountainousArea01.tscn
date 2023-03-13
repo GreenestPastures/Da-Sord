@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Scenes/Props/Platform.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Images/Background ELements/Mountainous/BgHills1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Background ELements/Mountainous/BgFlare.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Background ELements/Mountainous/bgDistant.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Background ELements/Mountainous/BgMountain1.png" type="Texture" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="BgDistant" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( 0.9, 0 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.65, 1 )
+
+[node name="BgMountain1" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.5, 0.5 )
+
+[node name="BgFlare" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.75, 1 )
+
+[node name="BgHills1" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Platform" parent="." instance=ExtResource( 2 )]
+position = Vector2( 177, 1111 )
+
+[node name="Platform2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 523, 1111 )
+
+[node name="Platform3" parent="." instance=ExtResource( 2 )]
+position = Vector2( 860, 1120 )
+
+[node name="Platform4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1210, 1124 )
+
+[node name="Platform5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1569, 1120 )
+
+[node name="Platform6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1942, 1116 )
+
+[node name="Platform7" parent="." instance=ExtResource( 2 )]
+position = Vector2( 34, 1011 )
+
+[node name="Platform8" parent="." instance=ExtResource( 2 )]
+position = Vector2( 380, 1011 )
+
+[node name="Platform9" parent="." instance=ExtResource( 2 )]
+position = Vector2( 717, 1020 )
+
+[node name="Platform10" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1067, 1024 )
+
+[node name="Platform11" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1426, 1020 )
+
+[node name="Platform12" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1799, 1016 )
+
+[node name="Platform13" parent="." instance=ExtResource( 2 )]
+position = Vector2( 305, 902 )
+
+[node name="Platform14" parent="." instance=ExtResource( 2 )]
+position = Vector2( 651, 902 )
+
+[node name="Platform15" parent="." instance=ExtResource( 2 )]
+position = Vector2( 988, 911 )
+
+[node name="Platform16" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1338, 915 )
+
+[node name="Platform17" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1697, 911 )
+
+[node name="Platform18" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2070, 907 )
+
+[node name="ThrockMorton" parent="." instance=ExtResource( 1 )]
+position = Vector2( 142, 892 )
+speed = 800.0
