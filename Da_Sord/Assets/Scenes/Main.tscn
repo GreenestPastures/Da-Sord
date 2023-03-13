@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
@@ -17,7 +17,7 @@
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-3.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-4.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Scenes/tempTestScript.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Scripts/tempTestScript.gd" type="Script" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
