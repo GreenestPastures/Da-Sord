@@ -221,7 +221,6 @@ shape = SubResource( 1 )
 [node name="QuestGiver" parent="." groups=["QuestHaver"] instance=ExtResource( 6 )]
 position = Vector2( 792, 63 )
 script = ExtResource( 18 )
-sentences = [ [ null ] ]
 Bazinga = [ [ 1 ] ]
 
 [node name="Doorway" parent="." instance=ExtResource( 10 )]
