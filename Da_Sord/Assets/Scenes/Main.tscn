@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scenes/TempQuestChar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/Images/Background ELements/pixelCassle.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Scenes/Props/HareDungeon/Dungeon Entrance.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-6.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Scenes/Props/Doorway.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-1.png" type="Texture" id=11]
@@ -17,7 +18,7 @@
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-3.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-4.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=18]
-[ext_resource path="res://Assets/Scripts/tempTestScript.gd" type="Script" id=19]
+[ext_resource path="res://Assets/Images/Dungeons/HareDungeon/HareDungeonEntrance.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
@@ -193,14 +194,13 @@ position = Vector2( 0, 432 )
 scale = Vector2( 11.1214, 2.43584 )
 texture = ExtResource( 5 )
 
+[node name="DungeonEntance" parent="." instance=ExtResource( 8 )]
+position = Vector2( 5277, 79 )
+EntranceSprite = ExtResource( 19 )
+
 [node name="ThrockMorton" parent="." instance=ExtResource( 1 )]
 position = Vector2( 110, 104 )
 speed = 800.0
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 19 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 40, 195 )
@@ -221,7 +221,9 @@ shape = SubResource( 1 )
 [node name="QuestGiver" parent="." groups=["QuestHaver"] instance=ExtResource( 6 )]
 position = Vector2( 792, 63 )
 script = ExtResource( 18 )
-Bazinga = [ [ 1 ] ]
+sentences = [ [ null ], [ "Wildin", null ] ]
+choice = [ [  ], [  ] ]
+Bazinga = [ [ 1 ], [  ], [  ] ]
 
 [node name="Doorway" parent="." instance=ExtResource( 10 )]
 

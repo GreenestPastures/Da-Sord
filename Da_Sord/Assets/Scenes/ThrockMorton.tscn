@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Scripts/SimplePlayerMoveScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Images/Player/frames/Stance 1/Vom Tag.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/Images/Player/frames/Stance 1/Nichen.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Images/Player/frames/Stance 1/Pflug.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Player/frames/Stance 1/Alber.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Player/frames/Stance 1/Ochs.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=2]
 resource_name = "KickFlip"
@@ -63,8 +64,9 @@ tracks/2/keys = {
 "values": [ Vector2( -17.6767, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "Swing 2H"
+[sub_resource type="Animation" id=9]
+resource_name = "StanceHeavy"
+length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -72,26 +74,42 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "StanceLight"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
+tracks/1/path = NodePath("Sprite:offset")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( -5.1557, -0.736529 ), Vector2( 15.4671, -1.47306 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 15, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
-resource_name = "Swing1H"
+resource_name = "Swing 1H"
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
@@ -109,12 +127,72 @@ tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ Vector2( -17.6767, 0 ), Vector2( -17.6767, 0 ), Vector2( 15.4671, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Swing 1L"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Swing 2H"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -5.1557, -0.736529 ), Vector2( 15.4671, -1.47306 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Swing 2L"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 8 ) ]
 }
 
 [sub_resource type="CapsuleShape2D" id=1]
@@ -131,13 +209,18 @@ jumpPow = 750.0
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/KickFlip = SubResource( 2 )
 anims/RESET = SubResource( 3 )
+anims/StanceHeavy = SubResource( 9 )
+anims/StanceLight = SubResource( 8 )
+"anims/Swing 1H" = SubResource( 5 )
+"anims/Swing 1L" = SubResource( 6 )
 "anims/Swing 2H" = SubResource( 4 )
-anims/Swing1H = SubResource( 5 )
+"anims/Swing 2L" = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( -17.6767, 0 )
 scale = Vector2( 0.541038, 0.684972 )
 texture = ExtResource( 5 )
+offset = Vector2( 15, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2( 0, -0.5 )

@@ -33,18 +33,24 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Stance 1"):
 		stance = 1
+		$AnimationPlayer.play("StanceHeavy")
 	if Input.is_action_just_pressed("Stance 2"):
 		print("Stanced Down")
 		stance = 2
+		$AnimationPlayer.play("StanceLight")
+		
 	if Input.is_action_just_pressed("heavy attack"):
 		if stance == 1:
-			$AnimationPlayer.play("Swing1")
+			$AnimationPlayer.play("Swing 1H")
 		elif stance == 2:
-			$AnimationPlayer.play("Swing 2")
+			$AnimationPlayer.play("Swing 2H")
 	if Input.is_action_just_pressed("light attack"):
 		if stance == 1:
 			print("smack")
+			$AnimationPlayer.play("Swing 1L")
+			
 		elif stance == 2:
+			$AnimationPlayer.play("Swing 2L")
 			print("kerthwack!!")
 
 func Drop():

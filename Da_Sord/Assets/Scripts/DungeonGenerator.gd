@@ -42,11 +42,12 @@ func make_maze():
 	var unvisited = []  # array of unvisited tiles
 	var stack = []
 	# fill the map with solid tiles
-	Map.clear()
+	#Map.clear()
 	for x in range(width):
 		for y in range(height):
 			unvisited.append(Vector2(x, y))
-			Map.set_cellv(Vector2(x, y), UP|RIGHT|DOWN|LEFT)
+			if Map.get_cellv(Vector2(x,y)) < 0:
+				Map.set_cellv(Vector2(x, y), UP|RIGHT|DOWN|LEFT)
 	var current = Vector2(startPos.x-1, startPos.y-1)
 #	var current = Vector2(randi() % int(startPos.x-1), randi() % int(startPos.y-1))
 	unvisited.erase(current)
@@ -72,10 +73,12 @@ func make_maze():
 				Map.set_cellv(next, next_walls)
 			current = next
 			unvisited.erase(current)
+
 #			print(cell_walls[dir])
 			
 		elif stack:
 			current = stack.pop_back()
 		yield(get_tree(), 'idle_frame')
 #		yield(get_tree().create_timer(0.2), "timeout")
+	#LOOP TO SELECT LEVELS BASED ON TILENUM 0-15
 
