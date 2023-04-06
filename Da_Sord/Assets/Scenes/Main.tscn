@@ -197,6 +197,7 @@ texture = ExtResource( 5 )
 [node name="DungeonEntance" parent="." instance=ExtResource( 8 )]
 position = Vector2( 5277, 79 )
 EntranceSprite = ExtResource( 19 )
+DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 1 )]
 position = Vector2( 110, 104 )

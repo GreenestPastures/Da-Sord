@@ -81,4 +81,5 @@ func make_maze():
 		yield(get_tree(), 'idle_frame')
 #		yield(get_tree().create_timer(0.2), "timeout")
 	#LOOP TO SELECT LEVELS BASED ON TILENUM 0-15
+	# CHECK TILENUM AND USE RANDOM ROOM FROM THAT NUMSET
 
