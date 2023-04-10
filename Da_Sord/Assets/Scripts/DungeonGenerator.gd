@@ -9,10 +9,29 @@ const LEFT = 0x8
 
 export var cell_walls = {Vector2(0, -1): UP, Vector2(1, 0): RIGHT,
 				  Vector2(0, 1): DOWN, Vector2(-1, 0): LEFT}
-
+export (PackedScene) var ThrockMorton
+export (Transform2D) var SpawnLoc
 var tile_size = 64  # tile size (in pixels)
 export var width = 25  # width of map (in tiles)
 export var height = 15  # height of map (in tiles)
+export (Array, int) var TileZero = []
+export (Array, int) var TileOne = []
+export (Array, int) var TileTwo = []
+export (Array, int) var TileThree = []
+export (Array, int) var TileFour = []
+export (Array, int) var TileFive = []
+export (Array, int) var TileSix = []
+export (Array, int) var TileSeven = []
+export (Array, int) var TileEight = []
+export (Array, int) var TileNine = []
+export (Array, int) var TileTen = []
+export (Array, int) var TileEleven = []
+export (Array, int) var TileTwelve = []
+export (Array, int) var TileThirteen = []
+export (Array, int) var TileFourteen = []
+onready var LevelLists = [TileZero, TileOne, TileTwo, TileThree, TileFour, TileFive, TileSix, TileSeven, TileEight, TileNine, TileTen, TileEleven, TileTwelve, TileThirteen, TileFourteen]
+
+
 
 # get a reference to the map for convenience
 onready var Map = $TileMap
@@ -82,4 +101,16 @@ func make_maze():
 #		yield(get_tree().create_timer(0.2), "timeout")
 	#LOOP TO SELECT LEVELS BASED ON TILENUM 0-15
 	# CHECK TILENUM AND USE RANDOM ROOM FROM THAT NUMSET
+	for x in range(width):
+		for y in range(height):
+			var curTile = Map.get_cellv(Vector2(x, y))
+			var TilesList = LevelLists[curTile]
+			Map.set_cellv(Vector2(x, y), TilesList[randi() % TilesList.size()])
+		yield(get_tree(), 'idle_frame')
+			
+			
+	
+#		var baby =ThrockMorton.instance()
+#		baby.transform = SpawnLoc
+#		add_child(baby)
 

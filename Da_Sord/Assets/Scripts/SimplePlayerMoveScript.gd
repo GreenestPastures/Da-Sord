@@ -19,7 +19,7 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("right"):
 		velocity.x = speed
 		$Sprite.flip_h = false
-
+	
 	velocity.y = velocity.y + GRAVITY
 	if Input.is_action_just_pressed("jump") && is_on_floor() && !Input.is_action_pressed("down"):
 		velocity.y = -jumpPow
