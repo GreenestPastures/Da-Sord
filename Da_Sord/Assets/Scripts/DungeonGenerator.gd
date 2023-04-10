@@ -97,7 +97,7 @@ func make_maze():
 			
 		elif stack:
 			current = stack.pop_back()
-		yield(get_tree(), 'idle_frame')
+#		yield(get_tree(), 'idle_frame')
 #		yield(get_tree().create_timer(0.2), "timeout")
 	#LOOP TO SELECT LEVELS BASED ON TILENUM 0-15
 	# CHECK TILENUM AND USE RANDOM ROOM FROM THAT NUMSET
@@ -106,7 +106,7 @@ func make_maze():
 			var curTile = Map.get_cellv(Vector2(x, y))
 			var TilesList = LevelLists[curTile]
 			Map.set_cellv(Vector2(x, y), TilesList[randi() % TilesList.size()])
-		yield(get_tree(), 'idle_frame')
+#		yield(get_tree(), 'idle_frame')
 			
 			
 	
