@@ -32,8 +32,8 @@ TileFourteen = [ 33, 34 ]
 cell_size = Vector2( 1920, 1280 )
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 3 )]
-position = Vector2( 632, 420 )
+position = Vector2( 1035, 276 )
 speed = 800.0
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
-position = Vector2( 634, 554 )
+position = Vector2( 1066, 405 )
