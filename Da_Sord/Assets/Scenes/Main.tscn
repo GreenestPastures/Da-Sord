@@ -195,7 +195,7 @@ scale = Vector2( 11.1214, 2.43584 )
 texture = ExtResource( 5 )
 
 [node name="DungeonEntance" parent="." instance=ExtResource( 8 )]
-position = Vector2( 5277, 79 )
+position = Vector2( -281, 79 )
 EntranceSprite = ExtResource( 19 )
 DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
 
