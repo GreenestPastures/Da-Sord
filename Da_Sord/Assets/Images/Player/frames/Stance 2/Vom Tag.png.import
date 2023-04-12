@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Vom Tag.png-e687f34b0b361f52eaa9b0d6753acf66.stex"
+path="res://.import/Vom Tag.png-9789fa9c375c3463ed68d0bfb80e417d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Images/Player/frames/Stance 1/Vom Tag.png"
-dest_files=[ "res://.import/Vom Tag.png-e687f34b0b361f52eaa9b0d6753acf66.stex" ]
+source_file="res://Assets/Images/Player/frames/Stance 2/Vom Tag.png"
+dest_files=[ "res://.import/Vom Tag.png-9789fa9c375c3463ed68d0bfb80e417d.stex" ]
 
 [params]
 

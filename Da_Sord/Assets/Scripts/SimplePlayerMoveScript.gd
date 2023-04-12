@@ -9,8 +9,8 @@ const GRAVITY = 30
 var bump = [0, 0]
 var jumpCount
 var canJump = true
-var crouch = false
-var midDash = false
+var crouch = true
+export var midDash = false
 var canDash = true
 export var dashCooldown = .6
 onready var curshape = $StandShape
@@ -36,11 +36,11 @@ func _physics_process(delta):
 		jumpCount = 1
 	
 	if Input.is_action_just_pressed("dash") && canDash:
+		$AnimationPlayer.play("Slide")
+		Dashing()
 		if $Sprite.flip_h == true:
-			Dashing()
 			velocity.x = -dashPow
 		else:
-			Dashing()
 			velocity.x = dashPow
 	
 	
@@ -50,7 +50,7 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Crouch")
 		curshape = $CrouchShape
 		crouch = true
-	elif crouch == true:
+	elif crouch == true && canDash:
 		$AnimationPlayer.play("Stand")
 		curshape = $StandShape
 		crouch = false
@@ -108,8 +108,9 @@ func Drop():
 func Dashing():
 	midDash = true
 	canDash = false
-	yield(get_tree().create_timer(.1), "timeout")
+	yield(get_tree().create_timer(.15), "timeout")
 	midDash = false
+	$AnimationPlayer.play("Stand")
 	yield(get_tree().create_timer(dashCooldown), "timeout")
 	canDash = true
 	
