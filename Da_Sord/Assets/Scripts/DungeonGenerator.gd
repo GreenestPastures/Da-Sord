@@ -1,4 +1,4 @@
-extends Node2D
+sextends Node2D
 
 export var startPos = Vector2(0,0)
 
