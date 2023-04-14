@@ -58,7 +58,7 @@ func _physics_process(delta):
 	
 	velocity.y = velocity.y + GRAVITY
 	if is_on_wall() && !Input.is_action_pressed("down"):
-		velocity.y = clamp(velocity.y, 60, -10)
+		velocity.y = clamp(velocity.y, 150, -10)
 	if Input.is_action_just_pressed("jump") && is_on_floor() && !Input.is_action_pressed("down") && canJump:
 		velocity.y = -jumpPow
 		JC()
