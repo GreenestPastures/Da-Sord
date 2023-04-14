@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-4.png" type="Texture" id=17]
 [ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=18]
 [ext_resource path="res://Assets/Images/Dungeons/HareDungeon/HareDungeonEntrance.png" type="Texture" id=19]
+[ext_resource path="res://Assets/Scenes/Creatura/Enemies/GiantHare.tscn" type="PackedScene" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 20, 20 )
@@ -275,6 +276,10 @@ position = Vector2( 2480, -602 )
 
 [node name="Platform14" parent="Platfroms" instance=ExtResource( 3 )]
 position = Vector2( 2829, -831 )
+
+[node name="GiantHare" parent="." instance=ExtResource( 20 )]
+position = Vector2( 3714, 27.0001 )
+scale = Vector2( 0.190096, 0.190096 )
 
 [connection signal="body_entered" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_entered"]
 [connection signal="body_exited" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_exited"]
