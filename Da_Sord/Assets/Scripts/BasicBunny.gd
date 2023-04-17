@@ -19,18 +19,22 @@ func _physics_process(delta):
 		leftGoing = !leftGoing
 	if is_on_wall():
 		TurnAround()
-
-
+	
+	
 	if leftGoing:
 		velocity.x = run * dir
 	else:
 		velocity.x = run * -dir
 	
+	move_and_slide(velocity, Vector2.UP)
 
 func TurnAround():
+	if !justTurner:
+		justTurner = true
+		leftGoing = !leftGoing		
+		yield(get_tree().create_timer(.3), "timeout")
+		justTurner = false
 	
-#	yield(get_tree().create_timer(rand_range(0.4,12)), "timeout")
-	leftGoing = !leftGoing
 	
 	
 
