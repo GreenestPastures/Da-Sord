@@ -44,7 +44,7 @@ func _physics_process(delta):
 			velocity.x = dashPow
 	
 	
-	
+	move_and_slide(velocity)
 	
 	if Input.is_action_pressed("down"):
 		$AnimationPlayer.play("Crouch")
@@ -54,7 +54,8 @@ func _physics_process(delta):
 		$AnimationPlayer.play("Stand")
 		curshape = $StandShape
 		crouch = false
-	
+	if is_on_floor():
+		print("FLOOR")
 	
 	velocity.y = velocity.y + GRAVITY
 	if is_on_wall() && !Input.is_action_pressed("down"):
@@ -95,15 +96,16 @@ func _physics_process(delta):
 			$AnimationPlayer.play("Swing 2L")
 
 func Drop():
+	
 	if get_slide_count():
 		for i in get_slide_count():
 			bump = get_slide_collision(i).collider
 		if bump.get_groups().size():
 			for i in bump.get_groups().size():
 				if bump.get_groups()[i] == "Platform":
-					bump.get_node("curShape").get_parent().set_collision_layer_bit(2, false)
+					bump.get_node("CollisionShape2D").get_parent().set_collision_layer_bit(2, false)
 					yield(get_tree().create_timer(.3), "timeout")
-					bump.get_node("curShape").get_parent().set_collision_layer_bit(2, true)
+					bump.get_node("CollisionShape2D").get_parent().set_collision_layer_bit(2, true)
 
 func Dashing():
 	midDash = true

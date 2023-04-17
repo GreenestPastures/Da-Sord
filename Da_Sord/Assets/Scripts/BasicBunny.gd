@@ -13,24 +13,23 @@ func _physics_process(delta):
 #	if is_on_floor(): 
 #		velocity.y = 0 
 #	else:
-	velocity.y = velocity.y + GRAVITY
+	velocity.y += GRAVITY
 	#      ABOUT TO CHANGE THE WHOLE THING TO USE RAYCASTS, WHICH I NEED TO CHASE THE PLAYER ANYWAY
 	if is_on_wall():
 		leftGoing = !leftGoing
 	if is_on_wall():
-		print(is_on_floor(), "FLOOR, ", is_on_wall())
 		TurnAround()
+
 
 	if leftGoing:
 		velocity.x = run * dir
 	else:
 		velocity.x = run * -dir
 	
-	move_and_slide(velocity)
 
 func TurnAround():
 	
-	yield(get_tree().create_timer(rand_range(0.4,12)), "timeout")
+#	yield(get_tree().create_timer(rand_range(0.4,12)), "timeout")
 	leftGoing = !leftGoing
 	
 	
