@@ -1,84 +1,19 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Assets/Scripts/SimplePlayerMoveScript.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Images/Player/frames/Stance 2/Vom Tag.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Scenes/DialogueItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scripts/PopupTest.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Images/Player/frames/Stance 1/Nichen.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/Player/frames/Stance 1/Pflug.png" type="Texture" id=6]
-[ext_resource path="res://Assets/Images/Player/frames/Stance 1/Alber.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/Player/frames/Stance 1/Ochs.png" type="Texture" id=8]
-[ext_resource path="res://Assets/Scripts/CrouchSprite.gd" type="Script" id=9]
-[ext_resource path="res://Assets/Images/Player/frames/Stance 1/SlipOver.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/Player/frames/Stance 1/PlayerFrames.tres" type="SpriteFrames" id=11]
 
-[sub_resource type="Animation" id=10]
-resource_name = "Crouch"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CrouchSprite:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("StandShape:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CrouchShape:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 19.0
+height = 42.0
 
-[sub_resource type="Animation" id=2]
-resource_name = "KickFlip"
-length = 0.35
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 360.0 ]
-}
+[sub_resource type="CapsuleShape2D" id=12]
+radius = 19.1498
+height = 4.41917
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=13]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:rotation_degrees")
@@ -92,266 +27,12 @@ tracks/0/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 5 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -17.6767, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("CrouchSprite:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("StandShape:disabled")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ true ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("CrouchShape:disabled")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ false ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("CrouchSprite:texture")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ ExtResource( 10 ) ]
-}
 
-[sub_resource type="Animation" id=13]
-resource_name = "Slide"
-length = 0.2
+[sub_resource type="Animation" id=14]
+resource_name = "theFlip"
+length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray(  ),
-"transitions": PoolRealArray(  ),
-"update": 1,
-"values": [  ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("CrouchSprite:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 10 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("StandShape:disabled")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CrouchShape:disabled")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Sprite:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("CrouchSprite:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=9]
-resource_name = "StanceHeavy"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "StanceLight"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 2 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:offset")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 15, 0 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-resource_name = "Stand"
-tracks/0/type = "value"
-tracks/0/path = NodePath("CrouchShape:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("StandShape:disabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CrouchSprite:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "Swing 1H"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -359,43 +40,15 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 6 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( -17.6767, 0 ), Vector2( -17.6767, 0 ), Vector2( 15.4671, 0 ) ]
+"update": 0,
+"values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=6]
-resource_name = "Swing 1L"
-length = 0.2
+[sub_resource type="Animation" id=15]
+resource_name = "theFlipLeft"
+length = 0.4
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 8 ) ]
-}
-
-[sub_resource type="Animation" id=4]
-resource_name = "Swing 2H"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
+tracks/0/path = NodePath("Sprite:rotation_degrees")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -403,45 +56,9 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 7 ) ]
+"update": 0,
+"values": [ 0.0, -360.0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = false
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ Vector2( -5.1557, -0.736529 ), Vector2( 15.4671, -1.47306 ) ]
-}
-
-[sub_resource type="Animation" id=7]
-resource_name = "Swing 2L"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 8 ) ]
-}
-
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 19.0
-height = 42.0
-
-[sub_resource type="CapsuleShape2D" id=12]
-radius = 19.1498
-height = 4.41917
 
 [node name="ThrockMorton" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 1.35772, 1.35772 )
@@ -451,31 +68,12 @@ script = ExtResource( 1 )
 jumpPow = 750.0
 dashPow = 6000.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Crouch = SubResource( 10 )
-anims/KickFlip = SubResource( 2 )
-anims/RESET = SubResource( 3 )
-anims/Slide = SubResource( 13 )
-anims/StanceHeavy = SubResource( 9 )
-anims/StanceLight = SubResource( 8 )
-anims/Stand = SubResource( 11 )
-"anims/Swing 1H" = SubResource( 5 )
-"anims/Swing 1L" = SubResource( 6 )
-"anims/Swing 2H" = SubResource( 4 )
-"anims/Swing 2L" = SubResource( 7 )
-
-[node name="Sprite" type="Sprite" parent="."]
-visible = false
-position = Vector2( -17.6767, 0 )
-scale = Vector2( 0.541038, 0.684972 )
-texture = ExtResource( 5 )
-offset = Vector2( 15, 0 )
-
-[node name="CrouchSprite" type="Sprite" parent="."]
-position = Vector2( -10.3114, 12.521 )
-scale = Vector2( 0.541038, 0.39036 )
-texture = ExtResource( 10 )
-script = ExtResource( 9 )
+[node name="Sprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.34991, 1.57258 )
+frames = ExtResource( 11 )
+animation = "Hvy Atk 1"
+frame = 3
+playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2( 0, -0.5 )
@@ -503,3 +101,8 @@ visible = false
 [node name="DialogueItem" parent="Camera2D/CanvasLayer" instance=ExtResource( 3 )]
 visible = false
 script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 13 )
+anims/theFlip = SubResource( 14 )
+anims/theFlipLeft = SubResource( 15 )

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 export (float) var speed = 1.0
+export (SpriteFrames) var playerFrames 
 var stance = 1
 var velocity = Vector2.ZERO
 export (float) var jumpPow = 600
@@ -26,36 +27,36 @@ func _physics_process(delta):
 		if Input.is_action_pressed("left"):
 			velocity.x = -speed
 			$Sprite.flip_h = true
-			$CrouchSprite.flip_h = true
 		elif Input.is_action_pressed("right"):
 			velocity.x = speed
 			$Sprite.flip_h = false
-			$CrouchSprite.flip_h = false
 	
 	if is_on_floor() || is_on_wall():
 		jumpCount = 1
 	
 	if Input.is_action_just_pressed("dash") && canDash:
-		$AnimationPlayer.play("Slide")
+#		#$AnimationPlayer.play("Slide")
 		Dashing()
 		if $Sprite.flip_h == true:
 			velocity.x = -dashPow
 		else:
 			velocity.x = dashPow
 	
-	
-	move_and_slide(velocity)
+	if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20 :
+		$Sprite.set_animation("Run")
+		print("runin")
+	elif $Sprite.get_animation() == "Run":
+			$Sprite.set_animation("Stance "+str(stance))
+			
 	
 	if Input.is_action_pressed("down"):
-		$AnimationPlayer.play("Crouch")
 		curshape = $CrouchShape
 		crouch = true
 	elif crouch == true && canDash:
-		$AnimationPlayer.play("Stand")
+		$Sprite.set_animation("Stance 1")
 		curshape = $StandShape
 		crouch = false
-	if is_on_floor():
-		print("FLOOR")
+	
 	
 	velocity.y = velocity.y + GRAVITY
 	if is_on_wall() && !Input.is_action_pressed("down"):
@@ -63,13 +64,17 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump") && is_on_floor() && !Input.is_action_pressed("down") && canJump:
 		velocity.y = -jumpPow
 		JC()
-#		$AnimationPlayer.play("KickFlip")
+#		#$AnimationPlayer.play("KickFlip")
 	elif Input.is_action_pressed("down") && Input.is_action_just_pressed("jump"):
 		Drop()
-	elif Input.is_action_just_pressed("jump") && jumpCount && canJump:
+	elif Input.is_action_just_pressed("jump") && jumpCount && canJump && velocity.y < 400:
 		velocity.y = -jumpPow
 		jumpCount-= 1
-		$AnimationPlayer.play("KickFlip")
+		if !$Sprite.flip_h:
+			$AnimationPlayer.play("theFlip")
+		else:
+			$AnimationPlayer.play("theFlipLeft")
+			
 		JC()
 	velocity = move_and_slide(velocity,Vector2.UP)
 	
@@ -78,22 +83,41 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed("Stance 1"):
 		stance = 1
-		$AnimationPlayer.play("StanceHeavy")
+		$Sprite.set_animation("Stance 1")
+		#$AnimationPlayer.play("StanceHeavy")
 	if Input.is_action_just_pressed("Stance 2"):
 		stance = 2
-		$AnimationPlayer.play("StanceLight")
+		$Sprite.set_animation("Stance 2")
+		#$AnimationPlayer.play("StanceLight")
 		
 	if Input.is_action_just_pressed("heavy attack"):
 		if stance == 1:
-			$AnimationPlayer.play("Swing 1H")
+			#$AnimationPlayer.play("Swing 1H")
+			$Sprite.set_animation("Hvy Atk 1")
+			yield(get_tree().create_timer(.667), "timeout")
+			$Sprite.set_animation("Stance 1")
+			print("HA1")
 		elif stance == 2:
-			$AnimationPlayer.play("Swing 2H")
+			#$AnimationPlayer.play("Swing 2H")
+			$Sprite.set_animation("Hvy Atk 1")
+			yield(get_tree().create_timer(.667), "timeout")
+			$Sprite.set_animation("Stance 2")
+			
+			print("HA2")
 	if Input.is_action_just_pressed("light attack"):
 		if stance == 1:
-			$AnimationPlayer.play("Swing 1L")
+			#$AnimationPlayer.play("Swing 1L")
+			print("LA1")
+			$Sprite.set_animation("Light Atk 1")
+			yield(get_tree().create_timer(.4375), "timeout")
+			$Sprite.set_animation("Stance 1")
 			
 		elif stance == 2:
-			$AnimationPlayer.play("Swing 2L")
+			#$AnimationPlayer.play("Swing 2L")
+			$Sprite.set_animation("Light Atk 1")
+			yield(get_tree().create_timer(.4375), "timeout")
+			$Sprite.set_animation("Stance 2")
+			print("LA2")
 
 func Drop():
 	
@@ -112,7 +136,7 @@ func Dashing():
 	canDash = false
 	yield(get_tree().create_timer(.15), "timeout")
 	midDash = false
-	$AnimationPlayer.play("Stand")
+	#$AnimationPlayer.play("Stand")
 	yield(get_tree().create_timer(dashCooldown), "timeout")
 	canDash = true
 	
