@@ -4,8 +4,8 @@
 [ext_resource path="res://Assets/Scripts/BasicBunny.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 304.5
-height = 0.0
+radius = 351.5
+height = 125.0
 
 [node name="GiantHare" type="KinematicBody2D"]
 script = ExtResource( 2 )

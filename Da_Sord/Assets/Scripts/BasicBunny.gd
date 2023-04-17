@@ -10,18 +10,17 @@ var justTurner = false
 
 
 func _physics_process(delta):
-	if is_on_floor(): 
-		velocity.y = 0 
-	else:
-		velocity.y = velocity.y + GRAVITY
-	
-#	if is_on_wall():
-#		leftGoing = !leftGoing
+#	if is_on_floor(): 
+#		velocity.y = 0 
+#	else:
+	velocity.y = velocity.y + GRAVITY
+	#      ABOUT TO CHANGE THE WHOLE THING TO USE RAYCASTS, WHICH I NEED TO CHASE THE PLAYER ANYWAY
 	if is_on_wall():
-		print(is_on_wall())
-		print(is_on_floor(), "FLOOR")
+		leftGoing = !leftGoing
+	if is_on_wall():
+		print(is_on_floor(), "FLOOR, ", is_on_wall())
 		TurnAround()
-		
+
 	if leftGoing:
 		velocity.x = run * dir
 	else:
@@ -31,8 +30,9 @@ func _physics_process(delta):
 
 func TurnAround():
 	
-	leftGoing = !leftGoing
 	yield(get_tree().create_timer(rand_range(0.4,12)), "timeout")
+	leftGoing = !leftGoing
+	
 	
 
 #Chooses a random position near-ish to rabbit to move to
