@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/Weapons_Block_Shield.wav-1f2b1d6d2804983116125460c4d3b157.sample"
 
 [deps]
 
 source_file="res://Assets/Audio/SFX/SFX/Weapons_Block_Shield.wav"
+dest_files=[ "res://.import/Weapons_Block_Shield.wav-1f2b1d6d2804983116125460c4d3b157.sample" ]
+
 [params]
 
 force/8_bit=false

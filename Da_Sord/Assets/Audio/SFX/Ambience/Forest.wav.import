@@ -2,11 +2,13 @@
 
 importer="wav"
 type="AudioStreamSample"
-valid=false
+path="res://.import/Forest.wav-8d3f782dfa88b0ecb191dd4a48149dc8.sample"
 
 [deps]
 
 source_file="res://Assets/Audio/SFX/Ambience/Forest.wav"
+dest_files=[ "res://.import/Forest.wav-8d3f782dfa88b0ecb191dd4a48149dc8.sample" ]
+
 [params]
 
 force/8_bit=false
