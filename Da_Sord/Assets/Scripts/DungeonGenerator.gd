@@ -11,6 +11,7 @@ export var cell_walls = {Vector2(0, -1): UP, Vector2(1, 0): RIGHT,
 				  Vector2(0, 1): DOWN, Vector2(-1, 0): LEFT}
 export (PackedScene) var ThrockMorton
 export (Transform2D) var SpawnLoc
+export (AudioStream) var musicTrack
 var tile_size = 64  # tile size (in pixels)
 export var width = 25  # width of map (in tiles)
 export var height = 15  # height of map (in tiles)
@@ -41,6 +42,8 @@ func _ready():
 	randomize()
 	tile_size = Map.cell_size
 	make_maze()
+	$"/root/BackgroundMusic".stream = musicTrack
+	$"/root/BackgroundMusic".play()
 
 
 func check_neighbors(cell, unvisited):
