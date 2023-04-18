@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Assets/Scripts/SimplePlayerMoveScript.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Scripts/WeaponStats.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/DialogueItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scripts/PopupTest.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Images/Player/frames/Stance 1/PlayerFrames.tres" type="SpriteFrames" id=11]
@@ -15,18 +16,6 @@ height = 4.41917
 
 [sub_resource type="Animation" id=13]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
 
 [sub_resource type="Animation" id=14]
 resource_name = "theFlip"
@@ -42,6 +31,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AtkArea:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -60,6 +61,12 @@ tracks/0/keys = {
 "values": [ 0.0, -360.0 ]
 }
 
+[sub_resource type="RectangleShape2D" id=16]
+extents = Vector2( 19.1498, 34.9851 )
+
+[sub_resource type="RectangleShape2D" id=17]
+extents = Vector2( 31.6707, 6.99703 )
+
 [node name="ThrockMorton" type="KinematicBody2D" groups=["Player"]]
 scale = Vector2( 1.35772, 1.35772 )
 collision_layer = 5
@@ -71,7 +78,8 @@ dashPow = 6000.0
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.34991, 1.57258 )
 frames = ExtResource( 11 )
-animation = "Dash"
+animation = "Light Atk 1"
+frame = 6
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]
@@ -79,7 +87,7 @@ position = Vector2( 0, -0.5 )
 shape = SubResource( 1 )
 disabled = true
 
-[node name="CrouchShape" type="CollisionShape2D" parent="."]
+[node name="CrouchShape" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2( 0, 17.6767 )
 shape = SubResource( 12 )
 
@@ -105,3 +113,20 @@ script = ExtResource( 4 )
 anims/RESET = SubResource( 13 )
 anims/theFlip = SubResource( 14 )
 anims/theFlipLeft = SubResource( 15 )
+
+[node name="AtkArea" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="HeavyAtkBox" type="CollisionShape2D" parent="AtkArea" groups=["PlayerAtk"]]
+position = Vector2( 22.8324, -2.57784 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 16 )
+disabled = true
+
+[node name="LightAtkBox" type="CollisionShape2D" parent="AtkArea" groups=["PlayerAtk"]]
+position = Vector2( 22.8324, 5.52397 )
+scale = Vector2( 0.999999, 0.999999 )
+shape = SubResource( 17 )
+disabled = true
+
+[connection signal="body_entered" from="AtkArea" to="AtkArea" method="_on_AtkArea_body_entered"]

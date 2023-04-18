@@ -14,6 +14,7 @@ var crouch = true
 export var midDash = false
 var canDash = true
 var attacking = false
+var jumpin = false
 export var dashCooldown = .6
 onready var curshape = $StandShape
 onready var halfspeed = speed*0.5
@@ -59,10 +60,13 @@ func _physics_process(delta):
 		crouch = false
 	
 	
+	if Input.is_action_just_pressed("jump"):
+		jumpPressed()
+	
 	velocity.y = velocity.y + GRAVITY
 	if is_on_wall() && !Input.is_action_pressed("down"):
 		velocity.y = clamp(velocity.y, 150, -10)
-	if Input.is_action_just_pressed("jump") && is_on_floor() && !Input.is_action_pressed("down") && canJump:
+	if jumpin && is_on_floor() && !Input.is_action_pressed("down") && canJump:
 		velocity.y = -jumpPow
 		JC()
 #		#$AnimationPlayer.play("KickFlip")
@@ -81,52 +85,64 @@ func _physics_process(delta):
 	
 	velocity.x = lerp(velocity.x, 0, 0.2)
 	
-	
-	if Input.is_action_just_pressed("Stance 1"):
-		stance = 1
-		$Sprite.set_animation("Stance 1")
-		#$AnimationPlayer.play("StanceHeavy")
-	if Input.is_action_just_pressed("Stance 2"):
-		stance = 2
-		$Sprite.set_animation("Stance 2")
-		#$AnimationPlayer.play("StanceLight")
-		
-	if Input.is_action_just_pressed("heavy attack"):
-		if stance == 1:
-			#$AnimationPlayer.play("Swing 1H")
-			attacking = true
-			$Sprite.set_animation("Hvy Atk 1")
-			yield(get_tree().create_timer(.667), "timeout")
+	if !attacking:
+		if Input.is_action_just_pressed("Stance 1"):
+			stance = 1
 			$Sprite.set_animation("Stance 1")
-			attacking = false
-			print("HA1")
-		elif stance == 2:
-			#$AnimationPlayer.play("Swing 2H")
-			attacking = true
-			$Sprite.set_animation("Hvy Atk 1")
-			yield(get_tree().create_timer(.667), "timeout")
+			#$AnimationPlayer.play("StanceHeavy")
+		if Input.is_action_just_pressed("Stance 2"):
+			stance = 2
 			$Sprite.set_animation("Stance 2")
-			attacking = false
+			#$AnimationPlayer.play("StanceLight")
 			
-			print("HA2")
-	if Input.is_action_just_pressed("light attack"):
-		if stance == 1:
-			#$AnimationPlayer.play("Swing 1L")
-			print("LA1")
-			attacking = true
-			$Sprite.set_animation("Light Atk 1")
-			yield(get_tree().create_timer(.4375), "timeout")
-			$Sprite.set_animation("Stance 1")
-			attacking = false
-			
-		elif stance == 2:
-			#$AnimationPlayer.play("Swing 2L")
-			attacking = true
-			$Sprite.set_animation("Light Atk 1")
-			yield(get_tree().create_timer(.4375), "timeout")
-			$Sprite.set_animation("Stance 2")
-			attacking = false
-			print("LA2")
+		if Input.is_action_just_pressed("heavy attack"):
+			if stance == 1:
+				#$AnimationPlayer.play("Swing 1H")
+				attacking = true
+				$Sprite.set_animation("Hvy Atk 1")
+				yield(get_tree().create_timer(.334), "timeout")
+				$AtkArea/HeavyAtkBox.disabled = false
+				yield(get_tree().create_timer(.334), "timeout")
+				$Sprite.set_animation("Stance 1")
+				$AtkArea/HeavyAtkBox.disabled = true
+				attacking = false
+				print("HA1")
+			elif stance == 2:
+				#$AnimationPlayer.play("Swing 2H")
+				attacking = true
+				$Sprite.set_animation("Hvy Atk 1")
+				yield(get_tree().create_timer(.334), "timeout")
+				$AtkArea/HeavyAtkBox.disabled = false
+				yield(get_tree().create_timer(.334), "timeout")
+				$Sprite.set_animation("Stance 2")
+				$AtkArea/HeavyAtkBox.disabled = true
+				attacking = false
+				
+				print("HA2")
+		if Input.is_action_just_pressed("light attack"):
+			if stance == 1:
+				#$AnimationPlayer.play("Swing 1L")
+				print("LA1")
+				attacking = true
+				$Sprite.set_animation("Light Atk 1")
+				yield(get_tree().create_timer(.167), "timeout")
+				$AtkArea/LightAtkBox.disabled = false
+				yield(get_tree().create_timer(.125), "timeout")
+				$Sprite.set_animation("Stance 1")
+				$AtkArea/LightAtkBox.disabled = true
+				attacking = false
+				
+			elif stance == 2:
+				#$AnimationPlayer.play("Swing 2L")
+				attacking = true
+				$Sprite.set_animation("Light Atk 1")
+				yield(get_tree().create_timer(.167), "timeout")
+				$AtkArea/LightAtkBox.disabled = false
+				yield(get_tree().create_timer(.125), "timeout")
+				$Sprite.set_animation("Stance 2")
+				$AtkArea/LightAtkBox.disabled = true
+				attacking = false
+				print("LA2")
 
 func Drop():
 	
@@ -156,4 +172,8 @@ func JC():
 	canJump = false
 	yield(get_tree().create_timer(.3), "timeout")
 	canJump = true
-	
+
+func jumpPressed():
+	jumpin = true
+	yield(get_tree().create_timer(.15), "timeout")
+	jumpin = false
