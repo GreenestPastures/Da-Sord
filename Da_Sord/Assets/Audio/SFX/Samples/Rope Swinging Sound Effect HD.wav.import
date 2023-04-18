@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rope Swinging Sound Effect HD.wav-e3afdae8e232c14488d06f277cc7c043.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Samples/Rope Swinging Sound Effect HD.wav"
+dest_files=[ "res://.import/Rope Swinging Sound Effect HD.wav-e3afdae8e232c14488d06f277cc7c043.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

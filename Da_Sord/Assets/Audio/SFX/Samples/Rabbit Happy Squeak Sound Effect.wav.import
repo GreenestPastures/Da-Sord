@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Rabbit Happy Squeak Sound Effect.wav-6201626ef941303e5769a399bfa4f730.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Samples/Rabbit Happy Squeak Sound Effect.wav"
+dest_files=[ "res://.import/Rabbit Happy Squeak Sound Effect.wav-6201626ef941303e5769a399bfa4f730.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -13,6 +13,7 @@ var canJump = true
 var crouch = true
 export var midDash = false
 var canDash = true
+var attacking = false
 export var dashCooldown = .6
 onready var curshape = $StandShape
 onready var halfspeed = speed*0.5
@@ -41,12 +42,12 @@ func _physics_process(delta):
 			velocity.x = -dashPow
 		else:
 			velocity.x = dashPow
-	
-	if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20 :
-		$Sprite.set_animation("Run")
-		print("runin")
-	elif $Sprite.get_animation() == "Run":
-			$Sprite.set_animation("Stance "+str(stance))
+	if !midDash && !attacking:
+		if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20 :
+			$Sprite.set_animation("Run")
+			print("runin")
+		elif $Sprite.get_animation() == "Run":
+				$Sprite.set_animation("Stance "+str(stance))
 			
 	
 	if Input.is_action_pressed("down"):
@@ -93,30 +94,38 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("heavy attack"):
 		if stance == 1:
 			#$AnimationPlayer.play("Swing 1H")
+			attacking = true
 			$Sprite.set_animation("Hvy Atk 1")
 			yield(get_tree().create_timer(.667), "timeout")
 			$Sprite.set_animation("Stance 1")
+			attacking = false
 			print("HA1")
 		elif stance == 2:
 			#$AnimationPlayer.play("Swing 2H")
+			attacking = true
 			$Sprite.set_animation("Hvy Atk 1")
 			yield(get_tree().create_timer(.667), "timeout")
 			$Sprite.set_animation("Stance 2")
+			attacking = false
 			
 			print("HA2")
 	if Input.is_action_just_pressed("light attack"):
 		if stance == 1:
 			#$AnimationPlayer.play("Swing 1L")
 			print("LA1")
+			attacking = true
 			$Sprite.set_animation("Light Atk 1")
 			yield(get_tree().create_timer(.4375), "timeout")
 			$Sprite.set_animation("Stance 1")
+			attacking = false
 			
 		elif stance == 2:
 			#$AnimationPlayer.play("Swing 2L")
+			attacking = true
 			$Sprite.set_animation("Light Atk 1")
 			yield(get_tree().create_timer(.4375), "timeout")
 			$Sprite.set_animation("Stance 2")
+			attacking = false
 			print("LA2")
 
 func Drop():
@@ -134,6 +143,8 @@ func Drop():
 func Dashing():
 	midDash = true
 	canDash = false
+	$Sprite.set_animation("Dash")
+	
 	yield(get_tree().create_timer(.15), "timeout")
 	midDash = false
 	#$AnimationPlayer.play("Stand")

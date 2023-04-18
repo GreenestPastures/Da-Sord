@@ -71,8 +71,7 @@ dashPow = 6000.0
 [node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 1.34991, 1.57258 )
 frames = ExtResource( 11 )
-animation = "Hvy Atk 1"
-frame = 3
+animation = "Dash"
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]

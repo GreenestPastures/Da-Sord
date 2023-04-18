@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Chain Sound Effects Γº╕ Thick Metal Industrial Chains Dragging and Laying Down Γº╕ Royalty Free.wav-2f32b67ca1b69e6cc3768dc0f4daba1c.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Samples/Chain Sound Effects Γº╕ Thick Metal Industrial Chains Dragging and Laying Down Γº╕ Royalty Free.wav"
+dest_files=[ "res://.import/Chain Sound Effects Γº╕ Thick Metal Industrial Chains Dragging and Laying Down Γº╕ Royalty Free.wav-2f32b67ca1b69e6cc3768dc0f4daba1c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

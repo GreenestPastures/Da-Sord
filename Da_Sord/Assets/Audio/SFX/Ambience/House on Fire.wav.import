@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/House on Fire.wav-76337070c95c544e3ccbd321426bc621.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/SFX/Ambience/House on Fire.wav"
+dest_files=[ "res://.import/House on Fire.wav-76337070c95c544e3ccbd321426bc621.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
