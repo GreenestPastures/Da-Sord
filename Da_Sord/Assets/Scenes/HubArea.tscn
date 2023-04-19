@@ -158,7 +158,6 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decoration/Floor/StaticBody2D"]
 position = Vector2( 1.46991, 5.0741 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Stone3" type="Sprite" parent="Decoration"]
@@ -171,7 +170,6 @@ position = Vector2( -493.922, 6.65842 )
 scale = Vector2( 0.45586, 0.515462 )
 
 [node name="Grass10" type="Sprite" parent="Decoration/Grass"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 22 )
 
 [node name="Grass 2" type="Sprite" parent="Decoration/Grass"]
@@ -181,17 +179,14 @@ texture = ExtResource( 19 )
 
 [node name="Grass4" type="Sprite" parent="Decoration/Grass"]
 position = Vector2( -159.522, 0.567871 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 
 [node name="Grass2" type="Sprite" parent="Decoration/Grass"]
 position = Vector2( 80.9103, -2.27118 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 8 )
 
 [node name="Grass 3" type="Sprite" parent="Decoration/Grass"]
 position = Vector2( -620.263, -1.65259 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 7 )
 
 [node name="Fences" type="Node2D" parent="Decoration"]
