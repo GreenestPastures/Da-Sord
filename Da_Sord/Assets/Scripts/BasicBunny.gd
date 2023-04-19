@@ -8,7 +8,10 @@ export var run = 600
 const GRAVITY = 30
 var justTurner = false
 export var health = 15
+export (AudioStream) var rabScream 
+export (AudioStream) var RabDeath 
 var velTrack = true
+var dead = false
 
 
 
@@ -50,6 +53,8 @@ func WaitAndNibble():
 
 func TakeDamage(dam, knockBack, atkDir):
 	print("Owie! And other various rabbit noises")
+	$YellBox.stream = rabScream
+	$YellBox.play()
 	#This is where I'll state the Rabbit recieves damage and Knockback based -
 	# -off of stats provided by players attacks
 	velTrack = false
@@ -61,5 +66,12 @@ func TakeDamage(dam, knockBack, atkDir):
 	velTrack = true
 	
 func die():
-	print("\"Aw I fokin died\" in rabbitnese")
-	queue_free()
+	if !dead:
+		dead = true
+		$YellBox.stream = RabDeath
+		$YellBox.play()
+		$CollisionShape2D.disabled = true
+		$Sprite.visible = false
+		print("\"Aw I fokin died\" in rabbitnese")
+		yield(get_tree().create_timer(.3), "timeout")	
+		queue_free()
