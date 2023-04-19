@@ -76,20 +76,21 @@ jumpPow = 750.0
 dashPow = 6000.0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 1.34991, 1.57258 )
+position = Vector2( 0, -3.22491 )
+scale = Vector2( 1.34991, 2.08994 )
 frames = ExtResource( 11 )
 animation = "Light Atk 1"
-frame = 6
+frame = 5
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2( 0, -0.5 )
 shape = SubResource( 1 )
-disabled = true
 
 [node name="CrouchShape" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2( 0, 17.6767 )
 shape = SubResource( 12 )
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
@@ -115,6 +116,7 @@ anims/theFlip = SubResource( 14 )
 anims/theFlipLeft = SubResource( 15 )
 
 [node name="AtkArea" type="Area2D" parent="."]
+position = Vector2( 1.47306, -2.20959 )
 script = ExtResource( 2 )
 
 [node name="HeavyAtkBox" type="CollisionShape2D" parent="AtkArea" groups=["PlayerAtk"]]

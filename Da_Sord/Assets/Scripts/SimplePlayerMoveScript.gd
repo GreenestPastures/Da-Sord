@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export (float) var speed = 1.0
+export (float) var speed = 800
 export (SpriteFrames) var playerFrames 
 var stance = 1
 var velocity = Vector2.ZERO
@@ -53,10 +53,14 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("down"):
 		curshape = $CrouchShape
+		$CrouchShape.disabled = false
+		$StandShape.disabled = true
 		crouch = true
 	elif crouch == true && canDash:
 		$Sprite.set_animation("Stance 1")
 		curshape = $StandShape
+		$StandShape.disabled = false
+		$CrouchShape.disabled = true
 		crouch = false
 	
 	
@@ -159,10 +163,14 @@ func Drop():
 func Dashing():
 	midDash = true
 	canDash = false
+	$CrouchShape.disabled = false
+	$StandShape.disabled = true
 	$Sprite.set_animation("Dash")
 	
 	yield(get_tree().create_timer(.15), "timeout")
 	midDash = false
+	$CrouchShape.disabled = true
+	$StandShape.disabled = false
 	#$AnimationPlayer.play("Stand")
 	yield(get_tree().create_timer(dashCooldown), "timeout")
 	canDash = true

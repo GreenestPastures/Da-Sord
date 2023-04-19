@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/Scripts/DungeonGenerator.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Scenes/Props/Platform.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Audio/Music/Forest Four.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/Audio/Music/Dewey Cavey.mp3" type="AudioStream" id=5]
 
 [node name="DungeonGenerator" type="Node2D"]
 script = ExtResource( 2 )
@@ -24,18 +24,17 @@ TileSix = [ 21 ]
 TileSeven = [ 37 ]
 TileEight = [ 26 ]
 TileNine = [ 35 ]
-TileTen = [ 38, 45 ]
+TileTen = [ 38 ]
 TileEleven = [ 44 ]
 TileTwelve = [ 32 ]
 TileThirteen = [ 40 ]
-TileFourteen = [ 3 ]
+TileFourteen = [ 33 ]
 
 [node name="TileMap" parent="." instance=ExtResource( 1 )]
 cell_size = Vector2( 1920, 1280 )
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1035, 276 )
-speed = 800.0
 
 [node name="Platform" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1066, 405 )

@@ -202,7 +202,6 @@ DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 1 )]
 position = Vector2( 110, 104 )
-speed = 800.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 40, 195 )
