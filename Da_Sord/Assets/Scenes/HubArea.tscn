@@ -1,27 +1,20 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Images/Background ELements/MountainSky/Pixel_Castle_Background-1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Fence/3.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Images/Placeholder assets/Objects/Grass/Grass 3.png" type="Texture" id=7]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Grass/Grass 2.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/rock2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Grass/Grass 4.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree6.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Shrub1.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree1.png" type="Texture" id=13]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Fence/2.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/rock.png" type="Texture" id=15]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Grass/Grass 1.png" type="Texture" id=19]
 [ext_resource path="res://Assets/Images/Placeholder assets/Background/Background_01.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Grass/Grass 10.png" type="Texture" id=22]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree2.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree4.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree5.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Fence/1.png" type="Texture" id=29]
 [ext_resource path="res://Assets/Scenes/MusicPlugin.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Audio/Music/Forest Four.wav" type="AudioStream" id=32]
 [ext_resource path="res://Assets/Scenes/Props/HareDungeon/Dungeon Entrance.tscn" type="PackedScene" id=33]
@@ -153,22 +146,6 @@ shape = SubResource( 1 )
 position = Vector2( -493.922, 6.65842 )
 scale = Vector2( 0.45586, 0.515462 )
 
-[node name="Grass10" type="Sprite" parent="Decoration/Grass"]
-texture = ExtResource( 22 )
-
-[node name="Grass 2" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( -443.918, -0.262268 )
-scale = Vector2( 0.845475, 0.727928 )
-texture = ExtResource( 19 )
-
-[node name="Grass4" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( -159.522, 0.567871 )
-texture = ExtResource( 10 )
-
-[node name="Grass2" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( 80.9103, -2.27118 )
-texture = ExtResource( 8 )
-
 [node name="Grass 3" type="Sprite" parent="Decoration/Grass"]
 position = Vector2( -620.263, -1.65259 )
 texture = ExtResource( 7 )
@@ -176,31 +153,6 @@ texture = ExtResource( 7 )
 [node name="Fences" type="Node2D" parent="Decoration"]
 position = Vector2( -807.225, -4.17072 )
 scale = Vector2( 0.209567, 0.292683 )
-
-[node name="Fence 3" type="Sprite" parent="Decoration/Fences"]
-position = Vector2( 706, 28 )
-scale = Vector2( 3.8913, 3.05556 )
-texture = ExtResource( 6 )
-
-[node name="Fence2" type="Sprite" parent="Decoration/Fences"]
-position = Vector2( 869, 18.9999 )
-scale = Vector2( 3.8913, 3.05556 )
-texture = ExtResource( 14 )
-
-[node name="2" type="Sprite" parent="Decoration/Fences"]
-position = Vector2( 3975, 11.9999 )
-scale = Vector2( 4.77175, 3.41667 )
-texture = ExtResource( 14 )
-
-[node name="1" type="Sprite" parent="Decoration/Fences"]
-position = Vector2( 3851.87, 14.2499 )
-scale = Vector2( 4.77175, 3.41667 )
-texture = ExtResource( 29 )
-
-[node name="Fence 1" type="Sprite" parent="Decoration/Fences"]
-position = Vector2( 621.75, 23.5 )
-scale = Vector2( 3.8913, 3.05556 )
-texture = ExtResource( 29 )
 
 [node name="ThrockMorton" parent="Decoration" instance=ExtResource( 2 )]
 position = Vector2( -807.225, -4.17072 )
