@@ -63,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Da Sord"
-run/main_scene="res://Assets/Scenes/Main.tscn"
+run/main_scene="res://Assets/Scenes/HubArea.tscn"
 config/icon="res://icon.png"
 
 [autoload]

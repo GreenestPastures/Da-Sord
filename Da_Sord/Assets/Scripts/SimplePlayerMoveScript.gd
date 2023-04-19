@@ -28,10 +28,14 @@ func _physics_process(delta):
 	if !midDash:
 		if Input.is_action_pressed("left"):
 			velocity.x = -speed
-			$Sprite.flip_h = true
+			if !$Sprite.flip_h:
+				$Sprite.flip_h = true
+				$AtkArea.scale *= -1
 		elif Input.is_action_pressed("right"):
 			velocity.x = speed
-			$Sprite.flip_h = false
+			if $Sprite.flip_h:
+				$Sprite.flip_h = false
+				$AtkArea.scale *= -1
 	
 	if is_on_floor() || is_on_wall():
 		jumpCount = 1
@@ -46,10 +50,9 @@ func _physics_process(delta):
 	if !midDash && !attacking:
 		if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20 :
 			$Sprite.set_animation("Run")
-			print("runin")
 		elif $Sprite.get_animation() == "Run":
 				$Sprite.set_animation("Stance "+str(stance))
-			
+	
 	
 	if Input.is_action_pressed("down"):
 		curshape = $CrouchShape
@@ -149,7 +152,6 @@ func _physics_process(delta):
 				print("LA2")
 
 func Drop():
-	
 	if get_slide_count():
 		for i in get_slide_count():
 			bump = get_slide_collision(i).collider
