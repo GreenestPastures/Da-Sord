@@ -44,8 +44,8 @@ scale = Vector2( 1.83109, 2.15718 )
 texture = ExtResource( 3 )
 
 [node name="Background01" type="Sprite" parent="Decoration"]
-position = Vector2( -400.979, -208.902 )
-scale = Vector2( 0.672217, 0.847999 )
+position = Vector2( -371.115, -290.122 )
+scale = Vector2( 0.859374, 1.0841 )
 texture = ExtResource( 20 )
 
 [node name="Willlow3" type="Sprite" parent="Decoration"]
