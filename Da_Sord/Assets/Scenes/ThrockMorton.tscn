@@ -86,7 +86,7 @@ position = Vector2( 0, -3.22491 )
 scale = Vector2( 1.34991, 2.08994 )
 frames = ExtResource( 11 )
 animation = "Light Atk 1"
-frame = 5
+frame = 1
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]

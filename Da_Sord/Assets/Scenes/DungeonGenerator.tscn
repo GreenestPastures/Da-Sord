@@ -26,7 +26,7 @@ TileEight = [ 26 ]
 TileNine = [ 35 ]
 TileTen = [ 38 ]
 TileEleven = [ 44 ]
-TileTwelve = [ 32 ]
+TileTwelve = [ 16 ]
 TileThirteen = [ 40 ]
 TileFourteen = [ 33 ]
 
