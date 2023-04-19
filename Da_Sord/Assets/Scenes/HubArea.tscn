@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=2]
@@ -32,6 +32,8 @@
 [ext_resource path="res://Assets/Images/Placeholder assets/Objects/Bushes/Bush 5.png" type="Texture" id=30]
 [ext_resource path="res://Assets/Scenes/MusicPlugin.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Audio/Music/Forest Four.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/Scenes/Props/HareDungeon/Dungeon Entrance.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Assets/Images/Dungeons/HareDungeon/HareDungeonEntrance.png" type="Texture" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 696.088, 106.552 )
@@ -224,3 +226,9 @@ texture = ExtResource( 29 )
 [node name="ThrockMorton" parent="Decoration" instance=ExtResource( 2 )]
 position = Vector2( -807.225, -4.17072 )
 scale = Vector2( 0.284533, 0.397381 )
+
+[node name="DungeonEntance" parent="." instance=ExtResource( 33 )]
+position = Vector2( 393, 827 )
+scale = Vector2( 0.242445, 0.242445 )
+EntranceSprite = ExtResource( 34 )
+DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"

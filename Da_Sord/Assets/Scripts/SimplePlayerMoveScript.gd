@@ -48,8 +48,9 @@ func _physics_process(delta):
 		else:
 			velocity.x = dashPow
 	if !midDash && !attacking:
-		if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20 :
+		if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20:
 			$Sprite.set_animation("Run")
+			print("runnin, ", velocity.x)
 		elif $Sprite.get_animation() == "Run":
 				$Sprite.set_animation("Stance "+str(stance))
 	
@@ -108,6 +109,7 @@ func _physics_process(delta):
 				attacking = true
 				$Sprite.set_animation("Hvy Atk 1")
 				yield(get_tree().create_timer(.334), "timeout")
+				$SwordSounds.SwingSoundOff(true, .334)
 				$AtkArea/HeavyAtkBox.disabled = false
 				yield(get_tree().create_timer(.334), "timeout")
 				$Sprite.set_animation("Stance 1")
@@ -119,6 +121,7 @@ func _physics_process(delta):
 				attacking = true
 				$Sprite.set_animation("Hvy Atk 1")
 				yield(get_tree().create_timer(.334), "timeout")
+				$SwordSounds.SwingSoundOff(true, .334)
 				$AtkArea/HeavyAtkBox.disabled = false
 				yield(get_tree().create_timer(.334), "timeout")
 				$Sprite.set_animation("Stance 2")
@@ -133,6 +136,7 @@ func _physics_process(delta):
 				attacking = true
 				$Sprite.set_animation("Light Atk 1")
 				yield(get_tree().create_timer(.167), "timeout")
+				$SwordSounds.SwingSoundOff(false, .125)
 				$AtkArea/LightAtkBox.disabled = false
 				yield(get_tree().create_timer(.125), "timeout")
 				$Sprite.set_animation("Stance 1")
@@ -144,6 +148,8 @@ func _physics_process(delta):
 				attacking = true
 				$Sprite.set_animation("Light Atk 1")
 				yield(get_tree().create_timer(.167), "timeout")
+				
+				$SwordSounds.SwingSoundOff(false, .125)
 				$AtkArea/LightAtkBox.disabled = false
 				yield(get_tree().create_timer(.125), "timeout")
 				$Sprite.set_animation("Stance 2")
@@ -176,7 +182,7 @@ func Dashing():
 	#$AnimationPlayer.play("Stand")
 	yield(get_tree().create_timer(dashCooldown), "timeout")
 	canDash = true
-	
+
 
 func JC():
 	canJump = false
