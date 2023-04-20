@@ -1,6 +1,6 @@
 extends Node
-export (Array, String) var sentences = []
-export (Array, String) var choice = []
+export (Array, Array, String) var sentences = []
+export (Array, Array, String) var choice = []
 export (int) onready var lines = sentences.size()
 export (int) onready var lastLine = lines-1
 export (bool) var questQuestions 

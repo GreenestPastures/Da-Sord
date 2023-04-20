@@ -20,9 +20,6 @@ onready var curshape = $StandShape
 onready var halfspeed = speed*0.5
 
 
-#func _input(event):
-#	if event is InputEventKey && event.pressed:
-
 
 func _physics_process(delta):
 	if !midDash:
@@ -41,7 +38,7 @@ func _physics_process(delta):
 		jumpCount = 1
 	
 	if Input.is_action_just_pressed("dash") && canDash:
-#		#$AnimationPlayer.play("Slide")
+
 		Dashing()
 		if $Sprite.flip_h == true:
 			velocity.x = -dashPow
@@ -76,7 +73,7 @@ func _physics_process(delta):
 	if jumpin && is_on_floor() && !Input.is_action_pressed("down") && canJump:
 		velocity.y = -jumpPow
 		JC()
-#		#$AnimationPlayer.play("KickFlip")
+
 	elif Input.is_action_pressed("down") && Input.is_action_just_pressed("jump"):
 		Drop()
 	elif Input.is_action_just_pressed("jump") && jumpCount && canJump && velocity.y < 400:

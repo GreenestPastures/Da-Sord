@@ -222,8 +222,8 @@ shape = SubResource( 1 )
 [node name="QuestGiver" parent="." groups=["QuestHaver"] instance=ExtResource( 6 )]
 position = Vector2( 792, 63 )
 script = ExtResource( 18 )
-sentences = [ "um", "uhh", "Cheque please", "", "The new lines start here", "Weenie", "Butts" ]
-choice = [ "Wawooweewa", "afdh", "dfsa", "adfsh" ]
+sentences = [ [ "Three", "Separate", "Lines" ], [ "Butts ahaha", "Hehe", "Hohohooo" ], [ "Uhh", "Why Would you Say That", "Bazongo" ] ]
+choice = [ [ "Choice 1", "1" ], [ "Choice 2?", "2" ] ]
 
 [node name="Doorway" parent="." instance=ExtResource( 10 )]
 

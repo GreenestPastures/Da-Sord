@@ -3,6 +3,7 @@ var open = false
 onready var dialText = $PanelContainer/TextureRect/Label
 var totalLines
 var curLine
+var curChoice = 0
 var choices
 var choicesCount
 var manuscript
@@ -24,7 +25,7 @@ func _ready():
 
 
 func questDialog(questLines, totLines, choicesIn):
-	dialText.text = str(questLines[0])
+	dialText.text = str(questLines[0][0])
 	print("==> ", questLines[0])
 	curLine = 0
 	totalLines = totLines
@@ -43,7 +44,11 @@ func _input(event):
 
 #Here we check the butts
 func buttCheck(buttIndex):
-	print(buttIndex)
+	curChoice = int(choices[buttIndex][1])
+	totalLines = manuscript[curChoice].size()
+	curLine = 0
+	for i in optionButtons.size():
+		optionButtons[i].visible = false
 
 func ProgressDialogue():
 	curLine+= 1
@@ -51,11 +56,11 @@ func ProgressDialogue():
 
 func UpdateDialogue():
 	if curLine < totalLines:
-		dialText.text = str(manuscript[curLine])
+		dialText.text = str(manuscript[curChoice][curLine])
 	elif choicesCount>0:
 		for i in choicesCount:
 			optionButtons[i].visible = true
-			optionButtons[i].set_text(choices[i])
+			optionButtons[i].set_text(choices[i][0])
 			optionButtons[i].set_pressed(false)
 	else:
 		visible = false
