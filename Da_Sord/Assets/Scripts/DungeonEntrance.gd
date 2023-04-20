@@ -11,7 +11,6 @@ onready var DungeonScene = get_node(DungeonSceneString)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$EntranceSprite.texture = EntranceSprite
-	pass # Replace with function body.
 
 func _input(event):
 	if Input.is_action_just_pressed("interact") && movingTime:
