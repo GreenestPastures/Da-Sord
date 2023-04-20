@@ -1,6 +1,6 @@
 extends Node
 #var sentenceInputs = load("res://Assets/Scripts/testScript3.gd")
-export (Array, Array)var sentences
+export (Array, Array, String) var sentences
 export (Array, Array) var choice = []
 export (Array, Array, int) var Bazinga
 export (int) onready var lines = sentences.size()
@@ -14,7 +14,8 @@ func _ready():
 
 
 func sentenceLine(lineNumber, sentence, choiceNumber):
-	return
+	pass
+
 
 func _on_QuestGiver_body_entered(touching):
 	if touching.is_in_group("Player"):
