@@ -5,6 +5,7 @@ var totalLines
 var curLine
 var curChoice = 0
 var choices
+var availableChoices = []
 var choicesCount
 var manuscript
 export var optionButtons = []
@@ -32,6 +33,10 @@ func questDialog(questLines, totLines, choicesIn):
 	manuscript = questLines
 	choices = choicesIn
 	choicesCount = choicesIn.size()
+	
+	for i in choices.size():
+		if int(choices[i][2]) == curChoice:
+			availableChoices.append(choices[i])
 	DialoguePopup()
 
 
@@ -49,6 +54,10 @@ func buttCheck(buttIndex):
 	curLine = 0
 	for i in optionButtons.size():
 		optionButtons[i].visible = false
+	availableChoices.clear()
+	for i in choices.size():
+		if int(choices[i][2]) == curChoice:
+			availableChoices.append(choices[i])
 
 func ProgressDialogue():
 	curLine+= 1
@@ -57,10 +66,10 @@ func ProgressDialogue():
 func UpdateDialogue():
 	if curLine < totalLines:
 		dialText.text = str(manuscript[curChoice][curLine])
-	elif choicesCount>0:
-		for i in choicesCount:
+	elif availableChoices.size()>0:
+		for i in availableChoices.size():
 			optionButtons[i].visible = true
-			optionButtons[i].set_text(choices[i][0])
+			optionButtons[i].set_text(availableChoices[i][0])
 			optionButtons[i].set_pressed(false)
 	else:
 		visible = false
