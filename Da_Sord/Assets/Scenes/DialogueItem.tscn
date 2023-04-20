@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Images/GUI Elements/DialogueBox.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Fonts/Booxkel4Godot/Bookxel.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Scripts/PopupTest.gd" type="Script" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 65
@@ -13,6 +14,7 @@ font_data = ExtResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 1, 1, 1, 0 )
+script = ExtResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -59,6 +61,7 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "By choosing this, the first choice, you'll have chosen the choice that comes first"
 custom_fonts/font = SubResource( 1 )
+toggle_mode = true
 text = "TO BATTLE!"
 
 [node name="Op2" type="Button" parent="VBoxContainer"]
@@ -69,6 +72,7 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
 custom_fonts/font = SubResource( 1 )
+toggle_mode = true
 text = "NAY, CEASE THE VIOLENCE!"
 
 [node name="Op3" type="Button" parent="VBoxContainer"]
@@ -79,6 +83,7 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
 custom_fonts/font = SubResource( 1 )
+toggle_mode = true
 text = "NAY, CEASE THE VIOLENCE!"
 
 [node name="Op4" type="Button" parent="VBoxContainer"]
@@ -89,6 +94,7 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
 custom_fonts/font = SubResource( 1 )
+toggle_mode = true
 text = "NAY, CEASE THE VIOLENCE!"
 
 [node name="Op5" type="Button" parent="VBoxContainer"]
@@ -99,4 +105,11 @@ margin_bottom = 396.0
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "This is the second choice of the list of choices, this choice being in the second position will choose the second available choice when you choose it.   It being this choice"
 custom_fonts/font = SubResource( 1 )
+toggle_mode = true
 text = "NAY, CEASE THE VIOLENCE!"
+
+[connection signal="pressed" from="VBoxContainer/Op1" to="." method="buttCheck" binds= [ 0 ]]
+[connection signal="pressed" from="VBoxContainer/Op2" to="." method="buttCheck" binds= [ 1 ]]
+[connection signal="pressed" from="VBoxContainer/Op3" to="." method="buttCheck" binds= [ 2 ]]
+[connection signal="pressed" from="VBoxContainer/Op4" to="." method="buttCheck" binds= [ 3 ]]
+[connection signal="pressed" from="VBoxContainer/Op5" to="." method="buttCheck" binds= [ 4 ]]

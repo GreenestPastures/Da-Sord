@@ -50,7 +50,6 @@ func _physics_process(delta):
 	if !midDash && !attacking:
 		if is_on_floor() && velocity.x > 20 || is_on_floor() && velocity.x < -20:
 			$Sprite.set_animation("Run")
-			print("runnin, ", velocity.x)
 		elif $Sprite.get_animation() == "Run":
 				$Sprite.set_animation("Stance "+str(stance))
 	
@@ -115,7 +114,6 @@ func _physics_process(delta):
 				$Sprite.set_animation("Stance 1")
 				$AtkArea/HeavyAtkBox.disabled = true
 				attacking = false
-				print("HA1")
 			elif stance == 2:
 				#$AnimationPlayer.play("Swing 2H")
 				attacking = true
@@ -128,11 +126,9 @@ func _physics_process(delta):
 				$AtkArea/HeavyAtkBox.disabled = true
 				attacking = false
 				
-				print("HA2")
 		if Input.is_action_just_pressed("light attack"):
 			if stance == 1:
 				#$AnimationPlayer.play("Swing 1L")
-				print("LA1")
 				attacking = true
 				$Sprite.set_animation("Light Atk 1")
 				yield(get_tree().create_timer(.167), "timeout")
@@ -155,7 +151,6 @@ func _physics_process(delta):
 				$Sprite.set_animation("Stance 2")
 				$AtkArea/LightAtkBox.disabled = true
 				attacking = false
-				print("LA2")
 
 func Drop():
 	if get_slide_count():

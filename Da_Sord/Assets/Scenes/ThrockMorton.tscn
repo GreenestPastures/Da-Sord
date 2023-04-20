@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Scripts/SimplePlayerMoveScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/WeaponStats.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/DialogueItem.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Scripts/PopupTest.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Scenes/FootstepDevice.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Audio/SFX/Footsteps/Player/Footsteps_Player_Grass_4.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/SFX/Footsteps/Player/Footsteps_Player_Grass_3.wav" type="AudioStream" id=7]
@@ -109,12 +108,8 @@ drag_margin_right = 0.15
 drag_margin_bottom = 0.15
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
-visible = false
 
 [node name="DialogueItem" parent="Camera2D/CanvasLayer" instance=ExtResource( 3 )]
-visible = false
-script = ExtResource( 4 )
-sentences = [ [ "Blah", "Blah", "Blah?" ], [ "Blah2", "Blah2!" ], [ "Blegh 3" ] ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )
