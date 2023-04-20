@@ -3,7 +3,8 @@ var open = false
 onready var dialText = $PanelContainer/TextureRect/Label
 var totalLines
 var curLine
-export (Array) var choices
+export (Array, String) var sentences
+export (Array, Array, String) onready var choices
 var choicesCount
 var manuscript
 export (Array) var optionButtons = []

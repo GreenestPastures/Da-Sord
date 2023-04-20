@@ -86,7 +86,6 @@ position = Vector2( 0, -3.22491 )
 scale = Vector2( 1.34991, 2.08994 )
 frames = ExtResource( 11 )
 animation = "Light Atk 1"
-frame = 5
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]
@@ -115,6 +114,7 @@ visible = false
 [node name="DialogueItem" parent="Camera2D/CanvasLayer" instance=ExtResource( 3 )]
 visible = false
 script = ExtResource( 4 )
+choices = [ [ "" ], [  ] ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )
