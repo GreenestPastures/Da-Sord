@@ -59,6 +59,7 @@ func buttCheck(buttIndex):
 	for i in choices.size():
 		if int(choices[i][2]) == curChoice:
 			availableChoices.append(choices[i])
+		dialText.text = str(manuscript[curChoice][curLine])	
 
 func ProgressDialogue():
 	curLine+= 1

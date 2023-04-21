@@ -170,8 +170,8 @@ scale = Vector2( 1.35772, 1.35772 )
 position = Vector2( 1714, 840 )
 scale = Vector2( -1.009, 0.92 )
 script = ExtResource( 8 )
-sentences = [ [ "Hi, I'm a the Jester", "I'm a temporary asset for one of the working Player Designs!" ], [ "Thank you, I was drawn by the talented Art" ] ]
-choice = [ [ "That's cool!", "0", "1" ], [ "Nice, Bye!", "-1", "0" ] ]
+sentences = [ [ "Hi, I'm a the Jester", "I'm a temporary asset for one of the working Player Designs!" ], [ "Thank you, I was drawn by the talented Artist ArtAgonist", "With Ealier concept work by the cleve MartianMoth" ] ]
+choice = [ [ "That's cool!", "1", "0" ], [ "Nice, Bye!", "-1", "0" ] ]
 
 [node name="QuestGiver" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3485, 849 )
