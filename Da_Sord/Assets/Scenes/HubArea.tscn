@@ -157,7 +157,7 @@ position = Vector2( -807.225, -4.17072 )
 scale = Vector2( 0.209567, 0.292683 )
 
 [node name="DungeonEntance" parent="." instance=ExtResource( 33 )]
-position = Vector2( 393, 827 )
+position = Vector2( 4474, 827 )
 scale = Vector2( 0.242445, 0.242445 )
 EntranceSprite = ExtResource( 34 )
 DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
@@ -176,5 +176,5 @@ choice = [ [ "That's cool!", "1", "0" ], [ "Nice, Bye!", "2", "0" ] ]
 position = Vector2( 3485, 849 )
 scale = Vector2( 1.00889, 0.92026 )
 script = ExtResource( 8 )
-sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh, excuse meeeee!!" ], [ "a", "a" ], [ "b", "b" ] ]
-choice = [ [ "no thank you, Im full", "1", "0" ], [ "Sorry, none for me thank you, I'm allergic to cabbage.", "3", "0" ] ]
+sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh. Oh, oh oh, excuse meeeee!! You there, Hello!!" ], [ "Oooohhhh, woe is me. A family of hares has taken up residence near my farm and have eaten my precious cabbages.", "I'M RUINED!!! My wife and child are very picky eaters and only eat steamed cabbages, without my crop they will surely starve!", "You look like a big, strong, androgenous adventurer. Could you please help me retrieve my cabbages from their burrow?" ], [ "Oh thank you, thank you, thank you. I can finally stop trying to force feed them gormet Cordon Bleu.", "The hare's den is just to the right past my cottage. Thank you again!" ], [ "Oh please? I don't have much but I can give you some coin for your troubles." ], [ "Okay, don't fret. I'll just put them out of their misery before they starve to death, Toodle-oo!" ] ]
+choice = [ [ "Yes? Hello stange cabbage man.", "1", "0" ], [ "Sorry, none for me thank you, I'm allergic to cabbage.", "3", "0" ], [ "Of course i can help, who am I to keep a loving family from their steamed cabbages.", "2", "1" ], [ "Who do I look like? pest control?", "3", "1" ], [ "Uhh, okay sure. I'll help you.", "2", "3" ], [ "I'm busy, find someone else to glean pity from peasant.", "4", "3" ] ]
