@@ -3,10 +3,10 @@
 [ext_resource path="res://Assets/Scripts/SimplePlayerMoveScript.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Scripts/WeaponStats.gd" type="Script" id=2]
 [ext_resource path="res://Assets/Scenes/DialogueItem.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/Scenes/FootstepDevice.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Scripts/FootstepDevice.gd" type="Script" id=5]
 [ext_resource path="res://Assets/Audio/SFX/Footsteps/Player/Footsteps_Player_Grass_4.wav" type="AudioStream" id=6]
 [ext_resource path="res://Assets/Audio/SFX/Footsteps/Player/Footsteps_Player_Grass_3.wav" type="AudioStream" id=7]
-[ext_resource path="res://Assets/Scenes/SwordSounds.gd" type="Script" id=8]
+[ext_resource path="res://Assets/Scripts/SwordSounds.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Audio/SFX/SFX/Swipes_1.wav" type="AudioStream" id=9]
 [ext_resource path="res://Assets/Audio/SFX/SFX/Swipes.wav" type="AudioStream" id=10]
 [ext_resource path="res://Assets/Images/Player/frames/Stance 1/PlayerFrames.tres" type="SpriteFrames" id=11]
@@ -85,6 +85,7 @@ position = Vector2( 0, -3.22491 )
 scale = Vector2( 1.34991, 2.08994 )
 frames = ExtResource( 11 )
 animation = "Light Atk 1"
+frame = 5
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]
@@ -110,6 +111,7 @@ drag_margin_bottom = 0.15
 [node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="DialogueItem" parent="Camera2D/CanvasLayer" instance=ExtResource( 3 )]
+visible = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 13 )

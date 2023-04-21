@@ -16,10 +16,11 @@
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree2.png" type="Texture" id=23]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree4.png" type="Texture" id=27]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree5.png" type="Texture" id=28]
-[ext_resource path="res://Assets/Scenes/MusicPlugin.gd" type="Script" id=31]
+[ext_resource path="res://Assets/Scripts/MusicPlugin.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Audio/Music/Forest Four.wav" type="AudioStream" id=32]
 [ext_resource path="res://Assets/Scenes/Props/HareDungeon/Dungeon Entrance.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Assets/Images/Dungeons/HareDungeon/HareDungeonEntrance.png" type="Texture" id=34]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 696.088, 106.552 )

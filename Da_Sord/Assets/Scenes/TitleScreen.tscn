@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/Images/Titles and Logos/TitleFall.png" type="Texture" id=1]
-[ext_resource path="res://Assets/Scenes/randImage.gd" type="Script" id=2]
-[ext_resource path="res://Assets/Scenes/MenuSequenceTing.gd" type="Script" id=3]
+[ext_resource path="res://Assets/Scripts/randImage.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Scripts/MenuSequenceTing.gd" type="Script" id=3]
 [ext_resource path="res://Assets/Images/Titles and Logos/PressButton.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFontData" id=1]

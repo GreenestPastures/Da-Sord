@@ -29,6 +29,7 @@ func questDialog(questLines, totLines, choicesIn):
 	dialText.text = str(questLines[0][0])
 	print("==> ", questLines[0])
 	curLine = 0
+	curChoice = 0
 	totalLines = totLines
 	manuscript = questLines
 	choices = choicesIn
