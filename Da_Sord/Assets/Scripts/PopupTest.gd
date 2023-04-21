@@ -71,8 +71,9 @@ func UpdateDialogue():
 	elif availableChoices.size()>0:
 		for i in availableChoices.size():
 			optionButtons[i].visible = true
-			optionButtons[i].set_text(availableChoices[i][0])
+			optionButtons[i].get_node("Label").text = availableChoices[i][0]
 			optionButtons[i].set_pressed(false)
+			
 	else:
 		visible = false
 		open = false
@@ -84,5 +85,6 @@ func DialoguePopup():
 	yield(get_tree().create_timer(.3), "timeout")
 	open = true
 	UpdateDialogue()
+
 
 
