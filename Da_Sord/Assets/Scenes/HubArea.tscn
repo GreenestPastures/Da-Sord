@@ -156,19 +156,19 @@ texture = ExtResource( 7 )
 position = Vector2( -807.225, -4.17072 )
 scale = Vector2( 0.209567, 0.292683 )
 
-[node name="QuestGiver" parent="Decoration" instance=ExtResource( 6 )]
-position = Vector2( -101.403, -19.3903 )
-scale = Vector2( 0.211429, 0.269344 )
-script = ExtResource( 8 )
-sentences = [ [ "peepee poopoo caca" ], [ "okay bye", "" ], [ "thank you for the delicoius pepe", "" ] ]
-choice = [ [ "no thank you, Im full", "1", "0" ], [ "mmmm yes please", "0", "2" ], [ "yummy pepe", "2", "0" ], [ "okay byeeeeee", "-1", "0" ] ]
-
-[node name="ThrockMorton" parent="Decoration" instance=ExtResource( 2 )]
-position = Vector2( -807.225, -4.17072 )
-scale = Vector2( 0.284533, 0.397381 )
-
 [node name="DungeonEntance" parent="." instance=ExtResource( 33 )]
 position = Vector2( 393, 827 )
 scale = Vector2( 0.242445, 0.242445 )
 EntranceSprite = ExtResource( 34 )
 DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
+
+[node name="ThrockMorton" parent="." instance=ExtResource( 2 )]
+position = Vector2( 116.994, 901 )
+scale = Vector2( 1.35772, 1.35772 )
+
+[node name="QuestGiver" parent="." instance=ExtResource( 6 )]
+position = Vector2( 3485, 849 )
+scale = Vector2( 1.00889, 0.92026 )
+script = ExtResource( 8 )
+sentences = [ [ "peepee poopoo caca", "CHeck" ], [ "okay bye", "" ], [ "thank you for the delicoius pepe", "" ] ]
+choice = [ [ "no thank you, Im full", "1", "0" ], [ "mmmm yes please", "0", "2" ], [ "yummy pepe", "2", "0" ], [ "okay byeeeeee", "-1", "0" ] ]

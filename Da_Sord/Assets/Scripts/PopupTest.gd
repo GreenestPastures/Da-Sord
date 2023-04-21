@@ -65,7 +65,7 @@ func ProgressDialogue():
 	UpdateDialogue()
 
 func UpdateDialogue():
-	if curLine < totalLines:
+	if curLine < manuscript[curChoice].size():
 		dialText.text = str(manuscript[curChoice][curLine])
 	elif availableChoices.size()>0:
 		for i in availableChoices.size():

@@ -8,11 +8,13 @@ var currentCol
 
 
 func _ready():
-	print(sentences[lastLine])
-
+	connect("body_entered", self, "_on_QuestGiver_body_entered")
+	connect("body_exited", self, "_on_QuestGiver_body_exited")
+	#MAKE THIS WORK
 
 
 func _on_QuestGiver_body_entered(touching):
+	print(touching)	
 	if touching.is_in_group("Player"):
 		questQuestions = true
 		currentCol = touching
