@@ -164,7 +164,6 @@ DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 2 )]
 position = Vector2( 116.994, 901 )
-scale = Vector2( 1.35772, 1.35772 )
 
 [node name="JesterAsset" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1714, 840 )
@@ -177,5 +176,5 @@ choice = [ [ "That's cool!", "1", "0" ], [ "Nice, Bye!", "-1", "0" ] ]
 position = Vector2( 3485, 849 )
 scale = Vector2( 1.00889, 0.92026 )
 script = ExtResource( 8 )
-sentences = [ [ "peepee poopoo caca", "CHeck" ], [ "okay bye", "" ], [ "thank you for the delicoius pepe", "" ] ]
-choice = [ [ "no thank you, Im full", "1", "0" ], [ "mmmm yes please", "0", "2" ], [ "yummy pepe", "2", "0" ], [ "okay byeeeeee", "-1", "0" ] ]
+sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh, excuse meeeee!!" ], [ "", "" ], [ "", "" ] ]
+choice = [ [ "no thank you, Im full", "1", "0" ], [ "Sorry, none for me thank you, I'm allergic to cabbage.", "1", "0" ] ]
