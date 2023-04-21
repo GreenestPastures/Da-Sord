@@ -56,13 +56,13 @@ alignment = 1
 [node name="Op1" type="Button" parent="VBoxContainer"]
 visible = false
 margin_top = 321.0
-margin_right = 798.0
+margin_right = 1805.0
 margin_bottom = 396.0
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "By choosing this, the first choice, you'll have chosen the choice that comes first"
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
-text = "TO BATTLE!"
+text = "TO BATTLE!TO BATTLE!TO BATTLE!TO BATTO asdgasdgasdgsadg BATTLE!TLE!"
 
 [node name="Op2" type="Button" parent="VBoxContainer"]
 visible = false

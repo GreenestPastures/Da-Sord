@@ -169,12 +169,12 @@ position = Vector2( 116.994, 901 )
 position = Vector2( 1714, 840 )
 scale = Vector2( -1.009, 0.92 )
 script = ExtResource( 8 )
-sentences = [ [ "Hi, I'm a the Jester", "I'm a temporary asset for one of the working Player Designs!" ], [ "Thank you, I was drawn by the talented Artist ArtAgonist", "With Ealier concept work by the cleve MartianMoth" ] ]
-choice = [ [ "That's cool!", "1", "0" ], [ "Nice, Bye!", "-1", "0" ] ]
+sentences = [ [ "Hi, I'm a the Jester", "I'm a temporary asset for one of the working Player Designs!" ], [ "Thank you, I was drawn by the talented Artist ArtAgonist", "With Ealier concept work by the cleve MartianMoth" ], [ "Cya!" ] ]
+choice = [ [ "That's cool!", "1", "0" ], [ "Nice, Bye!", "2", "0" ] ]
 
 [node name="QuestGiver" parent="." instance=ExtResource( 6 )]
 position = Vector2( 3485, 849 )
 scale = Vector2( 1.00889, 0.92026 )
 script = ExtResource( 8 )
-sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh, excuse meeeee!!" ], [ "", "" ], [ "", "" ] ]
-choice = [ [ "no thank you, Im full", "1", "0" ], [ "Sorry, none for me thank you, I'm allergic to cabbage.", "1", "0" ] ]
+sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh, excuse meeeee!!" ], [ "a", "a" ], [ "b", "b" ] ]
+choice = [ [ "no thank you, Im full", "1", "0" ], [ "Sorry, none for me thank you, I'm allergic to cabbage.", "3", "0" ] ]
