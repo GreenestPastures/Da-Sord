@@ -58,11 +58,21 @@ visible = false
 margin_top = 321.0
 margin_right = 798.0
 margin_bottom = 396.0
+grow_vertical = 2
 rect_min_size = Vector2( 0, 75 )
 hint_tooltip = "By choosing this, the first choice, you'll have chosen the choice that comes first"
 custom_fonts/font = SubResource( 1 )
 toggle_mode = true
 text = "TO BATTLE!"
+
+[node name="Label" type="Label" parent="VBoxContainer/Op1"]
+visible = false
+margin_left = -2.0
+margin_right = 800.0
+margin_bottom = 117.0
+custom_fonts/font = SubResource( 1 )
+text = "ialhsdebvfisavDEFIBASIDBFIASEFIWIEUFBCIUPJhsdvFJHVDFJHVS"
+autowrap = true
 
 [node name="Op2" type="Button" parent="VBoxContainer"]
 visible = false
