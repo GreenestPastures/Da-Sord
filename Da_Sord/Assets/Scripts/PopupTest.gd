@@ -50,7 +50,7 @@ func _input(event):
 
 #Here we check the butts
 func buttCheck(buttIndex):
-	curChoice = int(choices[buttIndex][1])
+	curChoice = int(availableChoices[buttIndex][1])
 	totalLines = manuscript[curChoice].size()
 	curLine = 0
 	for i in optionButtons.size():
