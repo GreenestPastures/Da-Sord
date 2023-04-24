@@ -175,7 +175,7 @@ dashPow = 5000.0
 position = Vector2( 1720, 852 )
 scale = Vector2( -1.009, 0.92 )
 script = ExtResource( 8 )
-sentences = [ [ "Hi, I'm a the Jester", "I'm a temporary asset for one of the working Player Designs!" ], [ "Thank you, I was drawn by the talented Artist ArtAgonist", "With Ealier concept work by the cleve MartianMoth" ], [ "Cya!" ] ]
+sentences = [ [ "Hi, I'm a the Jester", "I'm a temporary asset for one of the working Player Designs!" ], [ "Thank you, I was drawn by the talented Artist ArtAgonist", "With Ealier concept work by the clever MartianMoth" ], [ "Cya!" ] ]
 choice = [ [ "That's cool!", "1", "0" ], [ "Nice, Bye!", "2", "0" ] ]
 
 [node name="QuestGiver" parent="." instance=ExtResource( 6 )]
