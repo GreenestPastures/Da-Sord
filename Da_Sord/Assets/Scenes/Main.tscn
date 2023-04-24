@@ -276,7 +276,7 @@ position = Vector2( 2480, -602 )
 position = Vector2( 2829, -831 )
 
 [node name="GiantHare" parent="." groups=["Ouchable"] instance=ExtResource( 20 )]
-position = Vector2( 1219, 55 )
+position = Vector2( 1215, 21 )
 scale = Vector2( 0.190096, 0.190096 )
 
 [connection signal="body_entered" from="QuestGiver" to="QuestGiver" method="_on_QuestGiver_body_entered"]

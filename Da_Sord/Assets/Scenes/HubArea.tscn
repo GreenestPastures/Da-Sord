@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/Images/Background ELements/cassle2.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Scenes/ThrockMorton.tscn" type="PackedScene" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Brush3.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/rock.png" type="Texture" id=15]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Brush1.png" type="Texture" id=16]
+[ext_resource path="res://Assets/Scenes/Creatura/Enemies/GiantHare.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Assets/Scripts/MusicPlugin.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Audio/Music/Forest Four.wav" type="AudioStream" id=32]
 [ext_resource path="res://Assets/Scenes/Props/HareDungeon/Dungeon Entrance.tscn" type="PackedScene" id=33]
@@ -305,3 +306,11 @@ texture = ExtResource( 14 )
 [node name="Brush2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Foreground1"]
 position = Vector2( -1447.28, 19.1498 )
 texture = ExtResource( 13 )
+
+[node name="GiantHare" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1060, 654 )
+scale = Vector2( 0.215223, 0.215223 )
+
+[node name="GiantHare2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 2392, -363 )
+scale = Vector2( 0.241133, 0.241133 )

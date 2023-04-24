@@ -9,7 +9,7 @@
 radius = 351.5
 height = 125.0
 
-[node name="GiantHare" type="KinematicBody2D"]
+[node name="GiantHare" type="KinematicBody2D" groups=["Ouchable"]]
 script = ExtResource( 2 )
 rabScream = ExtResource( 4 )
 RabDeath = ExtResource( 3 )
