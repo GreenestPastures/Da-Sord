@@ -11,10 +11,8 @@ outline_size = 3
 outline_color = Color( 0.501961, 0.333333, 0.27451, 1 )
 font_data = ExtResource( 2 )
 
-[node name="DialogueItem" type="ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0 )
+[node name="DialogueItem" type="CanvasLayer"]
+layer = 2
 script = ExtResource( 3 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]

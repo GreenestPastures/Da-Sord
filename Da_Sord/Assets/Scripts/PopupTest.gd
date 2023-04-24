@@ -1,4 +1,4 @@
-extends ColorRect
+extends CanvasLayer
 var open = false
 onready var dialText = $PanelContainer/TextureRect/Label
 var totalLines
