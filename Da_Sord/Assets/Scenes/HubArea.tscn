@@ -64,6 +64,11 @@ position = Vector2( -226.095, -98.7073 )
 scale = Vector2( 0.227972, 0.257778 )
 texture = ExtResource( 7 )
 
+[node name="TreeNew4" type="Sprite" parent="Decoration"]
+position = Vector2( -61.5853, -150.512 )
+scale = Vector2( 0.306566, 0.346648 )
+texture = ExtResource( 7 )
+
 [node name="Brush5" type="Sprite" parent="Decoration"]
 position = Vector2( -874.914, -56.5609 )
 scale = Vector2( 0.0992888, 0.138668 )
@@ -153,7 +158,6 @@ texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Decoration/Floor/StaticBody2D"]
 position = Vector2( 5.7179, 5.0741 )
-scale = Vector2( 1, 1 )
 shape = SubResource( 1 )
 
 [node name="Fences" type="Node2D" parent="Decoration"]
@@ -208,7 +212,7 @@ scale = Vector2( 0.224127, 0.224127 )
 texture = ExtResource( 11 )
 
 [node name="Grass3" type="Sprite" parent="Grass"]
-position = Vector2( -317.664, -21.0088 )
+position = Vector2( -374.21, -27.2549 )
 scale = Vector2( 0.150156, 0.150156 )
 texture = ExtResource( 11 )
 
@@ -218,12 +222,12 @@ scale = Vector2( 0.150156, 0.150156 )
 texture = ExtResource( 11 )
 
 [node name="Grass8" type="Sprite" parent="Grass"]
-position = Vector2( -159.98, -51.6702 )
+position = Vector2( -25.7441, -48.8315 )
 scale = Vector2( 0.237595, 0.237595 )
 texture = ExtResource( 11 )
 
 [node name="Grass4" type="Sprite" parent="Grass"]
-position = Vector2( 87.8071, -27.8223 )
+position = Vector2( 182.968, -30.6616 )
 scale = Vector2( 0.150156, 0.150156 )
 texture = ExtResource( 11 )
 
@@ -238,12 +242,12 @@ scale = Vector2( 0.150156, 0.150156 )
 texture = ExtResource( 11 )
 
 [node name="Grass13" type="Sprite" parent="Grass"]
-position = Vector2( 632.112, -45.4243 )
+position = Vector2( 464.314, -46.5603 )
 scale = Vector2( 0.216944, 0.216944 )
 texture = ExtResource( 11 )
 
 [node name="Grass6" type="Sprite" parent="Grass"]
-position = Vector2( 782.439, -28.3901 )
+position = Vector2( 966.785, -31.2295 )
 scale = Vector2( 0.150156, 0.150156 )
 texture = ExtResource( 11 )
 
@@ -291,20 +295,16 @@ texture = ExtResource( 12 )
 
 [node name="Foreground2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Foreground1"]
 position = Vector2( -3104.47, -4.41916 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 10 )
 
 [node name="Brush3" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Foreground1"]
 position = Vector2( -715.169, 2.20959 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 14 )
 
 [node name="Brush4" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Foreground1"]
 position = Vector2( -2300.18, -1.47305 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 14 )
 
 [node name="Brush2" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Foreground1"]
 position = Vector2( -1447.28, 19.1498 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 13 )
