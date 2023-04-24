@@ -77,15 +77,15 @@ scale = Vector2( 1.35772, 1.35772 )
 collision_layer = 5
 collision_mask = 5
 script = ExtResource( 1 )
-speed = 500.0
-dashPow = 5000.0
+jumpPow = 750.0
+dashPow = 6000.0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -3.22491 )
 scale = Vector2( 1.34991, 2.08994 )
 frames = ExtResource( 11 )
 animation = "Light Atk 1"
-frame = 5
+frame = 2
 playing = true
 
 [node name="StandShape" type="CollisionShape2D" parent="." groups=["Player"]]
