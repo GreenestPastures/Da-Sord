@@ -6,17 +6,17 @@
 [ext_resource path="res://Assets/Images/Background ELements/floor.png" type="Texture" id=4]
 [ext_resource path="res://Assets/Images/Background ELements/cassle.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Scenes/TempQuestChar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Assets/Images/Placeholder assets/Objects/Grass/Grass 3.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/TreeNew.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Scripts/DialogueManuscript.gd" type="Script" id=8]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/rock2.png" type="Texture" id=9]
-[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree6.png" type="Texture" id=11]
-[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Shrub1.png" type="Texture" id=12]
-[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree1.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Foreground2.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Grass.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Foreground1.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Brush2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Brush3.png" type="Texture" id=14]
 [ext_resource path="res://Assets/Images/Objects/Outdoors Objects/rock.png" type="Texture" id=15]
+[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/Brush1.png" type="Texture" id=16]
 [ext_resource path="res://Assets/Images/Placeholder assets/Background/Background_01.png" type="Texture" id=20]
-[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree2.png" type="Texture" id=23]
-[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree4.png" type="Texture" id=27]
-[ext_resource path="res://Assets/Images/Objects/Outdoors Objects/tree5.png" type="Texture" id=28]
 [ext_resource path="res://Assets/Scripts/MusicPlugin.gd" type="Script" id=31]
 [ext_resource path="res://Assets/Audio/Music/Forest Four.wav" type="AudioStream" id=32]
 [ext_resource path="res://Assets/Scenes/Props/HareDungeon/Dungeon Entrance.tscn" type="PackedScene" id=33]
@@ -43,70 +43,75 @@ position = Vector2( -371.115, -290.122 )
 scale = Vector2( 0.859374, 1.0841 )
 texture = ExtResource( 20 )
 
-[node name="Willlow3" type="Sprite" parent="Decoration"]
-position = Vector2( -260.045, -149.634 )
-scale = Vector2( 0.25223, 0.353979 )
-texture = ExtResource( 27 )
+[node name="TreeNew" type="Sprite" parent="Decoration"]
+position = Vector2( -799.26, -85.5365 )
+scale = Vector2( 0.200097, 0.226259 )
+texture = ExtResource( 7 )
 
-[node name="Tree6" type="Sprite" parent="Decoration"]
-position = Vector2( 72.7468, -134.707 )
-scale = Vector2( 0.231654, 0.325103 )
-texture = ExtResource( 11 )
+[node name="TreeNew2" type="Sprite" parent="Decoration"]
+position = Vector2( -526.614, -122.122 )
+scale = Vector2( 0.245558, 0.277664 )
+texture = ExtResource( 7 )
 
-[node name="Tree3" type="Sprite" parent="Decoration"]
-position = Vector2( -808.691, -108.073 )
-scale = Vector2( 0.192447, 0.270081 )
-texture = ExtResource( 23 )
+[node name="TreeNew3" type="Sprite" parent="Decoration"]
+position = Vector2( -226.095, -98.7073 )
+scale = Vector2( 0.227972, 0.257778 )
+texture = ExtResource( 7 )
 
-[node name="Tree2" type="Sprite" parent="Decoration"]
-position = Vector2( -97.6309, -102.219 )
-scale = Vector2( 0.20135, 0.282574 )
+[node name="Brush5" type="Sprite" parent="Decoration"]
+position = Vector2( -874.914, -56.5609 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 14 )
+
+[node name="Brush6" type="Sprite" parent="Decoration"]
+position = Vector2( -528.5, -59.7804 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 14 )
+
+[node name="Brush7" type="Sprite" parent="Decoration"]
+position = Vector2( -686.723, -53.6342 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 14 )
+
+[node name="Brush8" type="Sprite" parent="Decoration"]
+position = Vector2( -275.134, -60.9512 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 14 )
+
+[node name="Brush9" type="Sprite" parent="Decoration"]
+position = Vector2( -75.207, -58.6097 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 14 )
+
+[node name="Brush10" type="Sprite" parent="Decoration"]
+position = Vector2( 102.505, -60.6584 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 14 )
+
+[node name="Brush2" type="Sprite" parent="Decoration"]
+position = Vector2( -781.447, -59.1951 )
+scale = Vector2( 0.0992888, 0.138668 )
 texture = ExtResource( 13 )
 
-[node name="Tree1" type="Sprite" parent="Decoration"]
-position = Vector2( -571.042, -83.195 )
-scale = Vector2( 0.16489, 0.231407 )
-texture = ExtResource( 28 )
+[node name="Brush3" type="Sprite" parent="Decoration"]
+position = Vector2( -137.658, -56.8536 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 13 )
 
-[node name="Shrub4" type="Sprite" parent="Decoration"]
-position = Vector2( -833.839, -10.9023 )
-scale = Vector2( 0.0887651, 0.0964718 )
-texture = ExtResource( 12 )
+[node name="Brush1" type="Sprite" parent="Decoration"]
+position = Vector2( -608.974, -59.1951 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 16 )
 
-[node name="Shrub3" type="Sprite" parent="Decoration"]
-position = Vector2( -740.791, -17.3414 )
-scale = Vector2( 0.142739, 0.155132 )
-texture = ExtResource( 12 )
+[node name="Brush11" type="Sprite" parent="Decoration"]
+position = Vector2( -204.51, -59.1951 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 16 )
 
-[node name="Shrub2" type="Sprite" parent="Decoration"]
-position = Vector2( -602.267, -10.9023 )
-scale = Vector2( 0.0722276, 0.125482 )
-texture = ExtResource( 12 )
-
-[node name="Shrub1" type="Sprite" parent="Decoration"]
-position = Vector2( -534.159, -11.1953 )
-scale = Vector2( 0.0937011, 0.105765 )
-texture = ExtResource( 12 )
-
-[node name="Shrub5" type="Sprite" parent="Decoration"]
-position = Vector2( -659.27, -7.68286 )
-scale = Vector2( 0.100428, 0.08398 )
-texture = ExtResource( 12 )
-
-[node name="Shrub6" type="Sprite" parent="Decoration"]
-position = Vector2( -214.779, -9.73193 )
-scale = Vector2( 0.116522, 0.103728 )
-texture = ExtResource( 12 )
-
-[node name="Shrub7" type="Sprite" parent="Decoration"]
-position = Vector2( -150.442, -10.6097 )
-scale = Vector2( 0.0842845, 0.127971 )
-texture = ExtResource( 12 )
-
-[node name="Shrub8" type="Sprite" parent="Decoration"]
-position = Vector2( -91.2349, -3.66846 )
-scale = Vector2( 0.0751002, 0.0855846 )
-texture = ExtResource( 12 )
+[node name="Brush4" type="Sprite" parent="Decoration"]
+position = Vector2( -435.662, -59.1951 )
+scale = Vector2( 0.0992888, 0.138668 )
+texture = ExtResource( 16 )
 
 [node name="Cassle" type="Sprite" parent="Decoration"]
 position = Vector2( -404.647, -26.7073 )
@@ -148,9 +153,40 @@ shape = SubResource( 1 )
 position = Vector2( -493.922, 6.65842 )
 scale = Vector2( 0.45586, 0.515462 )
 
-[node name="Grass 3" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( -620.263, -1.65259 )
-texture = ExtResource( 7 )
+[node name="Grass" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( -673.485, -26.6868 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass2" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( -462.934, -20.4409 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass3" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( -51.947, -27.8223 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass4" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( 197.679, -25.551 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass5" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( 479.946, -27.2544 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass6" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( 752.559, -24.9834 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass7" type="Sprite" parent="Decoration/Grass"]
+position = Vector2( 1076.2, -27.2546 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
 
 [node name="Fences" type="Node2D" parent="Decoration"]
 position = Vector2( -807.225, -4.17072 )
@@ -163,7 +199,7 @@ EntranceSprite = ExtResource( 34 )
 DungeonSceneString = "res://Assets/Scenes/DungeonGenerator.tscn"
 
 [node name="ThrockMorton" parent="." instance=ExtResource( 2 )]
-position = Vector2( 116.994, 901 )
+position = Vector2( -245, 739 )
 
 [node name="JesterAsset" parent="." instance=ExtResource( 6 )]
 position = Vector2( 1714, 840 )
@@ -178,3 +214,28 @@ scale = Vector2( 1.00889, 0.92026 )
 script = ExtResource( 8 )
 sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh. Oh, oh oh, excuse meeeee!! You there, Hello!!" ], [ "Oooohhhh, woe is me. A family of hares has taken up residence near my farm and have eaten my precious cabbages.", "I'M RUINED!!! My wife and child are very picky eaters and only eat steamed cabbages, without my crop they will surely starve!", "You look like a big, strong, androgynous adventurer. Could you please help me retrieve my cabbages from their burrow?" ], [ "Oh thank you, thank you, thank you. I can finally stop trying to force feed them gormet Cordon Bleu.", "The hare's den is just to the right past my cottage. Thank you again!" ], [ "Oh please? I don't have much but I can give you some coin for your troubles." ], [ "Okay, don't fret. I'll just put them out of their misery before they starve to death, Toodle-oo!" ] ]
 choice = [ [ "Yes? Hello.", "1", "0" ], [ "Sorry, none for me.", "3", "0" ], [ "Of course i can help.", "2", "1" ], [ "Who do I look like? pest control?", "3", "1" ], [ "Uhh, okay sure. I'll help you.", "2", "3" ], [ "I'm busy, find someone else.", "4", "3" ] ]
+
+[node name="Foreground1" type="Sprite" parent="."]
+position = Vector2( 4248, 630 )
+scale = Vector2( 1.35772, 1.35772 )
+texture = ExtResource( 12 )
+
+[node name="Foreground2" type="Sprite" parent="Foreground1"]
+position = Vector2( -3104.47, -4.41916 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 10 )
+
+[node name="Brush3" type="Sprite" parent="Foreground1"]
+position = Vector2( -715.169, 2.20959 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 14 )
+
+[node name="Brush4" type="Sprite" parent="Foreground1"]
+position = Vector2( -2300.18, -1.47305 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 14 )
+
+[node name="Brush2" type="Sprite" parent="Foreground1"]
+position = Vector2( -1447.28, 19.1498 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 13 )
