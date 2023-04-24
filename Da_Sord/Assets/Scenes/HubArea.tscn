@@ -149,45 +149,6 @@ texture = ExtResource( 4 )
 position = Vector2( 1.46991, 5.0741 )
 shape = SubResource( 1 )
 
-[node name="Grass" type="Node2D" parent="Decoration"]
-position = Vector2( -493.922, 6.65842 )
-scale = Vector2( 0.45586, 0.515462 )
-
-[node name="Grass" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( -673.485, -26.6868 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
-[node name="Grass2" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( -462.934, -20.4409 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
-[node name="Grass3" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( -51.947, -27.8223 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
-[node name="Grass4" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( 197.679, -25.551 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
-[node name="Grass5" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( 479.946, -27.2544 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
-[node name="Grass6" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( 752.559, -24.9834 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
-[node name="Grass7" type="Sprite" parent="Decoration/Grass"]
-position = Vector2( 1076.2, -27.2546 )
-scale = Vector2( 0.150156, 0.150156 )
-texture = ExtResource( 11 )
-
 [node name="Fences" type="Node2D" parent="Decoration"]
 position = Vector2( -807.225, -4.17072 )
 scale = Vector2( 0.209567, 0.292683 )
@@ -214,6 +175,45 @@ scale = Vector2( 1.00889, 0.92026 )
 script = ExtResource( 8 )
 sentences = [ [ "My cabbages. My poor, poor cabbages.", "Ooohhh. Oh, oh oh, excuse meeeee!! You there, Hello!!" ], [ "Oooohhhh, woe is me. A family of hares has taken up residence near my farm and have eaten my precious cabbages.", "I'M RUINED!!! My wife and child are very picky eaters and only eat steamed cabbages, without my crop they will surely starve!", "You look like a big, strong, androgynous adventurer. Could you please help me retrieve my cabbages from their burrow?" ], [ "Oh thank you, thank you, thank you. I can finally stop trying to force feed them gormet Cordon Bleu.", "The hare's den is just to the right past my cottage. Thank you again!" ], [ "Oh please? I don't have much but I can give you some coin for your troubles." ], [ "Okay, don't fret. I'll just put them out of their misery before they starve to death, Toodle-oo!" ] ]
 choice = [ [ "Yes? Hello.", "1", "0" ], [ "Sorry, none for me.", "3", "0" ], [ "Of course i can help.", "2", "1" ], [ "Who do I look like? pest control?", "3", "1" ], [ "Uhh, okay sure. I'll help you.", "2", "3" ], [ "I'm busy, find someone else.", "4", "3" ] ]
+
+[node name="Grass" type="Node2D" parent="."]
+position = Vector2( 1612, 938 )
+scale = Vector2( 2.17525, 1.76116 )
+
+[node name="Grass" type="Sprite" parent="Grass"]
+position = Vector2( -673.485, -26.6868 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass2" type="Sprite" parent="Grass"]
+position = Vector2( -462.934, -20.4409 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass3" type="Sprite" parent="Grass"]
+position = Vector2( -51.947, -27.8223 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass4" type="Sprite" parent="Grass"]
+position = Vector2( 197.679, -25.551 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass5" type="Sprite" parent="Grass"]
+position = Vector2( 479.946, -27.2544 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass6" type="Sprite" parent="Grass"]
+position = Vector2( 752.559, -24.9834 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
+
+[node name="Grass7" type="Sprite" parent="Grass"]
+position = Vector2( 1076.2, -27.2546 )
+scale = Vector2( 0.150156, 0.150156 )
+texture = ExtResource( 11 )
 
 [node name="Foreground1" type="Sprite" parent="."]
 position = Vector2( 4248, 630 )
