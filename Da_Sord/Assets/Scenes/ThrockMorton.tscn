@@ -13,11 +13,11 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.0
-height = 42.0
+height = 25.8145
 
 [sub_resource type="CapsuleShape2D" id=12]
 radius = 19.1498
-height = 4.41917
+height = 2.94601
 
 [sub_resource type="Animation" id=13]
 length = 0.001
@@ -93,7 +93,7 @@ position = Vector2( 0, -0.5 )
 shape = SubResource( 1 )
 
 [node name="CrouchShape" type="CollisionShape2D" parent="." groups=["Player"]]
-position = Vector2( 0, 17.6767 )
+position = Vector2( 0, 10.3114 )
 shape = SubResource( 12 )
 disabled = true
 
